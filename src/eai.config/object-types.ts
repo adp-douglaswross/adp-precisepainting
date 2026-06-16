@@ -41,6 +41,14 @@
  * └────────────┴─────────────────────────────────────────────────┘
  */
 
+export type StorageBackend = 'postgresql' | 'documentdb' | 'blob' | 'search';
+
+export interface ObjectTypeDefinition {
+  readonly name: string;
+  readonly storageBackend: StorageBackend;
+  readonly [key: string]: unknown;
+}
+
 const postgresqlResourceStorage = {
   schemaVersion: 1,
   storageBackend: 'postgresql' as const,

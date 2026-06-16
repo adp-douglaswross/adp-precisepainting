@@ -1,6 +1,26 @@
 ---
 name: 5_gofer_implement
-description: "Execute all tasks from tasks.md phase by phase with feedback loops and engineering review."
+description: Gofer Implement
+gofer:
+  workflowProfile: standard
+  canonicalSource: .specify/commands/5_gofer_implement.md
+  canonicalChecksum: d4f1f875ed47cb28c57a1f7ceb9117bd6532cd98d751ad47e97ffe3419ea43b0
+  metadataSource: extension/src/services/migration/ResourceSyncer.ts
+arguments:
+  - name: feature
+    description: Feature name or description
+    required: false
+result_schema:
+  type: object
+  properties:
+    output:
+      type: string
+      description: Path to generated artifact or execution summary
+    status:
+      type: string
+      enum:
+        - success
+        - error
 ---
 
 ## Workspace Preflight
@@ -10,7 +30,7 @@ Before doing stage/helper work:
 1. Resolve the repository root.
 2. Check the core Gofer sentinels:
    - `.specify/.gofer-version`
-   - `.specify/commands/0_business_scenario.md`
+   - `.specify/commands$ $0_business_scenario.md`
    - `.specify/templates/spec-template.md`
    - `.specify/scripts/bash/create-new-feature.sh`
    - `.specify/scripts/node/parse-stage-command.mjs`
@@ -26,7 +46,7 @@ Before doing stage/helper work:
    - Copilot: `.github/copilot-instructions.md`
    - VS Code extension mirrors Claude/Copilot/Gemini resources itself and should still keep the core scaffold healthy
 4. If the repo already has the workspace checker script, prefer running:
-   - `node .specify/scripts/node/gofer-workspace-check.mjs --host codex --json`
+   - `node .specify/scripts/node/gofer-workspace-check.mjs --host claude --json`
 5. If the workspace is missing or stale, ask exactly:
    - **"This repo is missing or stale for Gofer. Initialize/update it now?"**
 6. If the user says yes, run the Gofer workspace bootstrap helper and then resume this command from the top.
@@ -87,10 +107,10 @@ upgrade the depth before continuing. Do not silently broaden scope.
 
 This command expects in `.specify/specs/{feature}/`:
 
-- `research.md` - Codebase analysis (from /1_gofer_research)
-- `spec.md` - Feature specification (from /2_gofer_specify)
-- `plan.md` - Implementation plan (from /3_gofer_plan)
-- `tasks.md` - Task breakdown (from /4_gofer_tasks)
+- `research.md` - Codebase analysis (from $ $1_gofer_research)
+- `spec.md` - Feature specification (from $ $2_gofer_specify)
+- `plan.md` - Implementation plan (from $ $3_gofer_plan)
+- `tasks.md` - Task breakdown (from $ $4_gofer_tasks)
 
 If missing, prompt user to run the prerequisite stage.
 
@@ -123,7 +143,7 @@ Before starting implementation, assess context window health:
 | -------- | ----------- | ---------------------------------------- |
 | Healthy  | < 50%       | Proceed normally                         |
 | Warning  | 50-70%      | Use sub-agents, checkpoint every 5 tasks |
-| Critical | > 70%       | Run `/7_gofer_save`, start new session   |
+| Critical | > 70%       | Run `$ $7_gofer_save`, start new session   |
 
 ### Context Management Techniques
 
@@ -141,15 +161,15 @@ During implementation, use these techniques to preserve context quality:
 
 3. **Periodic Checkpoints**
    - Every 5 completed tasks, check context health
-   - If Warning status: Run `/7_gofer_save`
+   - If Warning status: Run `$ $7_gofer_save`
    - This enables resumption with fresh context
 
 **If compaction needed**:
 
 ```bash
-/7_gofer_save  # Creates comprehensive checkpoint
+$ $7_gofer_save  # Creates comprehensive checkpoint
 # Start new Claude Code session
-/8_gofer_resume  # Restores state with clean context
+$ $8_gofer_resume  # Restores state with clean context
 ```
 
 ---
@@ -423,17 +443,17 @@ explore different approaches, then a judge synthesizes the best result.
 
 ```
 # Diverge: Launch 3-5 agents with different approaches
-Task: subagent_type="implement-variant-generator", model="sonnet"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the implement-variant-generator analysis in each., model="sonnet"
   prompt="Perspective 1: Implement [task] using functional approach. Files: [list]"
 
-Task: subagent_type="implement-variant-generator", model="sonnet"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the implement-variant-generator analysis in each., model="sonnet"
   prompt="Perspective 2: Implement [task] using OOP approach. Files: [list]"
 
-Task: subagent_type="implement-variant-generator", model="sonnet"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the implement-variant-generator analysis in each., model="sonnet"
   prompt="Perspective 3: Implement [task] using event-driven approach. Files: [list]"
 
 # Converge: Judge synthesizes best approach
-Task: subagent_type="multi-perspective-judge", model="opus"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the multi-perspective-judge analysis in each., model="opus"
   prompt="Synthesize 3 implementation variants for [task]. Select best approach.
   Variant 1: [result]. Variant 2: [result]. Variant 3: [result]."
 ```
@@ -537,7 +557,7 @@ tool. Do NOT perform this review work inline in the main context.
 alignment
 
 ```
-Task: subagent_type="engineer-review", model="sonnet"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the engineer-review analysis in each., model="sonnet"
 Prompt: "Review alignment between spec.md, plan.md, tasks.md, and the
 implemented code in {FEATURE_DIR}. Check that all acceptance criteria are
 implemented. Report Red/Yellow/Gray findings."
@@ -546,7 +566,7 @@ implemented. Report Red/Yellow/Gray findings."
 **Agent 2**: codebase-analyzer (sonnet) — verify implementation patterns
 
 ```
-Task: subagent_type="codebase-analyzer", model="sonnet"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the codebase-analyzer analysis in each., model="sonnet"
 Prompt: "Verify that the implemented code follows existing codebase patterns
 from {FEATURE_DIR}/research.md and matches the architecture in
 {FEATURE_DIR}/plan.md. Report Red/Yellow/Gray findings."
@@ -556,7 +576,7 @@ from {FEATURE_DIR}/research.md and matches the architecture in
 coverage
 
 ```
-Task: subagent_type="validation-correctness", model="sonnet"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the validation-correctness analysis in each., model="sonnet"
 Prompt: "Verify that every acceptance criterion in {FEATURE_DIR}/spec.md
 has been implemented and has corresponding test coverage.
 Report Red/Yellow/Gray findings with coverage gaps."
@@ -603,10 +623,6 @@ After implementation complete and review gate passes:
 ════════════════════════════════════════════════════════════════
 ```
 
-**AUTO-CHAIN (MANDATORY)**: You MUST immediately invoke the next pipeline stage
-by calling the Skill tool with skill="/6_gofer_validate". Do NOT ask the user
-for confirmation. Do NOT output "Ready for next stage". Just invoke the skill
-NOW.
 
 ---
 
@@ -629,7 +645,7 @@ The standard Gofer workflow is the public default. EnterpriseAI deployment
 preflight is migration-only and runs only when `workflowProfile` is explicitly
 `enterpriseai`.
 
-Before any deployment task emitted by `/4_gofer_tasks` completes, this stage
+Before any deployment task emitted by `$ $4_gofer_tasks` completes, this stage
 MUST execute deployment preflight checks (manifest/config gate). A task that
 invokes `eai deploy` is not marked complete until all of the following files
 are present at the workspace root and pass their readiness checks:
@@ -730,6 +746,18 @@ At stage completion, log metrics:
 Logs to: `.specify/logs/pipeline.jsonl`
 
 ---
+
+
+
+## Pipeline Continuation
+
+This completes the 5_gofer_implement stage. To continue the Gofer pipeline:
+
+**Next Command:** `$ $6_gofer_validate`
+
+The next stage will use the artifacts generated by this command and continue the implementation workflow.
+
+**Note:** Codex CLI does not support automatic command chaining. You must manually run each stage command to progress through the pipeline.
 
 ## Key Rules
 

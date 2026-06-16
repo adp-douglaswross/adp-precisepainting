@@ -1,6 +1,26 @@
 ---
 name: gofer:bootstrap-workspace
-description: "Create or update the repo-owned Gofer scaffold for the current workspace."
+description: Gofer Workspace Bootstrap
+gofer:
+  workflowProfile: standard
+  canonicalSource: .specify/commands/gofer_bootstrap_workspace.md
+  canonicalChecksum: 49ba02c80cf374af77f40e10fee49b4c71c389a2da01b402480b2e5e7b607b03
+  metadataSource: extension/src/services/migration/ResourceSyncer.ts
+arguments:
+  - name: feature
+    description: Feature name or description
+    required: false
+result_schema:
+  type: object
+  properties:
+    output:
+      type: string
+      description: Path to generated artifact or execution summary
+    status:
+      type: string
+      enum:
+        - success
+        - error
 ---
 
 

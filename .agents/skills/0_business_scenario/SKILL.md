@@ -1,11 +1,28 @@
 ---
 name: 0_business_scenario
-description: "Define the business problem and scenario for Gofer to analyse and solve."
+description: Triage business scenario and orchestrate the unified Gofer pipeline
+gofer:
+  workflowProfile: standard
+  canonicalSource: .specify/commands/0_business_scenario.md
+  canonicalChecksum: 220b7f8e2ffccfbbc8ec08641d80a08e02c34d28f82515d9d24d69af129acbd4
+  metadataSource: extension/src/services/migration/ResourceSyncer.ts
+arguments:
+  - name: feature
+    description: Feature name or description
+    required: false
+result_schema:
+  type: object
+  properties:
+    output:
+      type: string
+      description: Path to generated artifact or execution summary
+    status:
+      type: string
+      enum:
+        - success
+        - error
 ---
 
----
-description: Triage business scenario and orchestrate the unified Gofer pipeline
----
 
 # Gofer Orchestrator
 
@@ -33,7 +50,7 @@ Before doing stage/helper work:
 1. Resolve the repository root.
 2. Check the core Gofer sentinels:
    - `.specify/.gofer-version`
-   - `.specify/commands/0_business_scenario.md`
+   - `.specify/commands$ $0_business_scenario.md`
    - `.specify/templates/spec-template.md`
    - `.specify/scripts/bash/create-new-feature.sh`
    - `.specify/scripts/node/parse-stage-command.mjs`
@@ -49,7 +66,7 @@ Before doing stage/helper work:
    - Copilot: `.github/copilot-instructions.md`
    - VS Code extension mirrors Claude/Copilot/Gemini resources itself and should still keep the core scaffold healthy
 4. If the repo already has the workspace checker script, prefer running:
-   - `node .specify/scripts/node/gofer-workspace-check.mjs --host codex --json`
+   - `node .specify/scripts/node/gofer-workspace-check.mjs --host claude --json`
 5. If the workspace is missing or stale, ask exactly:
    - **"This repo is missing or stale for Gofer. Initialize/update it now?"**
 6. If the user says yes, run the Gofer workspace bootstrap helper and then resume this command from the top.
@@ -122,7 +139,7 @@ with an unrelated non-EAI stack.
      runs `eai init <project-name> --skip-prompts --company-tenant
      <active-tenant-id>` when approved, verifies Gofer files, and then returns
      here.
-   - If `/0_business_scenario` is unavailable in a new repo, the user should run
+   - If `$ $0_business_scenario` is unavailable in a new repo, the user should run
      the plugin-level `/gofer:eai-first-run` command after installing or
      updating the Gofer plugin.
 3. **Install or update the EAI CLI when needed**
@@ -237,25 +254,25 @@ scenario and route them through the **unified Gofer pipeline**.
 │                    UNIFIED GOFER PIPELINE                        │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                  │
-│  0. /0_business_scenario → kickoff, routing, discovery          │
+│  0. $ $0_business_scenario → kickoff, routing, discovery          │
 │     Business scenario intake + optional problem validation       │
 │                         ↓ AUTO                                   │
-│  1. /1_gofer_research    → research.md                           │
+│  1. $ $1_gofer_research    → research.md                           │
 │     Deep codebase exploration + supporting review context        │
 │                         ↓ AUTO                                   │
-│  2. /2_gofer_specify     → spec.md                              │
+│  2. $ $2_gofer_specify     → spec.md                              │
 │     Feature specification informed by research                   │
 │                         ↓ AUTO                                   │
-│  3. /3_gofer_plan        → plan.md, data-model.md, contracts/   │
+│  3. $ $3_gofer_plan        → plan.md, data-model.md, contracts/   │
 │     Technical architecture and design                            │
 │                         ↓ AUTO                                   │
-│  4. /4_gofer_tasks       → tasks.md, traceability.md, issues.md │
+│  4. $ $4_gofer_tasks       → tasks.md, traceability.md, issues.md │
 │     Dependency-ordered task breakdown                            │
 │                         ↓ AUTO                                   │
-│  5. /5_gofer_implement   → [source code]                        │
+│  5. $ $5_gofer_implement   → [source code]                        │
 │     Execute tasks phase by phase                                 │
 │                         ↓ AUTO                                   │
-│  6. /6_gofer_validate    → validation artifacts                 │
+│  6. $ $6_gofer_validate    → validation artifacts                 │
 │     Validation, blast radius, and final engineering review       │
 │                                                                  │
 │  All artifacts go to: .specify/specs/{feature}/                 │
@@ -266,14 +283,14 @@ scenario and route them through the **unified Gofer pipeline**.
 
 | Command                       | Purpose                                                 |
 | ----------------------------- | ------------------------------------------------------- |
-| `/0a_problem_validation`      | Optional deeper problem framing before research         |
-| `/7_gofer_save`               | Save session checkpoint mid-implementation              |
-| `/8_gofer_resume`             | Resume work from saved checkpoint                       |
-| `/9_gofer_tests`              | Define acceptance test cases using DSL                  |
-| `/10_gofer_cloud`             | READ-ONLY cloud infrastructure analysis                 |
-| `/7a_stakeholder_comms`       | Optional post-validation communications package         |
-| `/gofer_hydrate`              | Reverse-engineer spec from existing code                |
-| `/gofer_constitution`         | Create/update project constitution                      |
+| `$ $0a_problem_validation`      | Optional deeper problem framing before research         |
+| `$ $7_gofer_save`               | Save session checkpoint mid-implementation              |
+| `$ $8_gofer_resume`             | Resume work from saved checkpoint                       |
+| `$ $9_gofer_tests`              | Define acceptance test cases using DSL                  |
+| `$ $10_gofer_cloud`             | READ-ONLY cloud infrastructure analysis                 |
+| `$ $7a_stakeholder_comms`       | Optional post-validation communications package         |
+| `$ $gofer_hydrate`              | Reverse-engineer spec from existing code                |
+| `$ $gofer_constitution`         | Create/update project constitution                      |
 | `/gofer:check-workspace`      | Check whether the repo scaffold is healthy              |
 | `/gofer:bootstrap-workspace`  | Create or update the repo-owned Gofer scaffold          |
 
@@ -907,25 +924,25 @@ exists):
 
 | Has This                                  | Missing This                | Start At             |
 | ----------------------------------------- | --------------------------- | -------------------- |
-| tasks.md (unchecked)                      | -                           | `/5_gofer_implement` |
-| plan.md                                   | tasks.md                    | `/4_gofer_tasks`     |
-| spec.md                                   | plan.md                     | `/3_gofer_plan`      |
-| research.md                               | spec.md                     | `/2_gofer_specify`   |
-| Nothing                                   | research.md                 | `/1_gofer_research`  |
-| Nothing                                   | Everything                  | `/1_gofer_research`  |
+| tasks.md (unchecked)                      | -                           | `$ $5_gofer_implement` |
+| plan.md                                   | tasks.md                    | `$ $4_gofer_tasks`     |
+| spec.md                                   | plan.md                     | `$ $3_gofer_plan`      |
+| research.md                               | spec.md                     | `$ $2_gofer_specify`   |
+| Nothing                                   | research.md                 | `$ $1_gofer_research`  |
+| Nothing                                   | Everything                  | `$ $1_gofer_research`  |
 
 #### For New Features
 
 1. Ask: **"What would you like to call this feature?"** (use AskUserQuestion)
 2. Create the spec directory: `.specify/specs/{feature-name}/`
-3. Invoke `/1_gofer_research` to start the pipeline
+3. Invoke `$ $1_gofer_research` to start the pipeline
 
 Output:
 
 ```
 ROUTING: GOFER PIPELINE
 FEATURE: {feature-name}
-STARTING: /1_gofer_research
+STARTING: $ $1_gofer_research
 AUTO-CHAIN: research → specify → plan → tasks → implement → validate
 NOTE: research may also create optional supporting review artifacts
 REASON: [explanation]
@@ -951,11 +968,11 @@ REASON: Continuing from existing artifacts
 
 ### Route D: Explore/Research
 
-Start with `/1_gofer_research` without auto-chaining:
+Start with `$ $1_gofer_research` without auto-chaining:
 
 ```
 ROUTING: GOFER RESEARCH (STANDALONE)
-COMMAND: /1_gofer_research
+COMMAND: $ $1_gofer_research
 AUTO-CHAIN: disabled after research until the user asks to continue
 REASON: User wants to explore the codebase first
 ```
@@ -968,20 +985,20 @@ Check for session checkpoints:
 find .specify/specs -name "session-checkpoint.md" -type f 2>/dev/null
 ```
 
-If checkpoint found → Invoke `/8_gofer_resume`
+If checkpoint found → Invoke `$ $8_gofer_resume`
 
 If no checkpoint but unchecked tasks exist:
 
 1. Find features with `- [ ]` in tasks.md
 2. Present options to user
-3. Resume with `/5_gofer_implement`
+3. Resume with `$ $5_gofer_implement`
 
 Output:
 
 ```
 ROUTING: GOFER RESUME
 FEATURE: {feature-name}
-COMMAND: /8_gofer_resume
+COMMAND: $ $8_gofer_resume
 CHECKPOINT: {path to checkpoint}
 REASON: Resuming from saved session
 ```
@@ -992,7 +1009,7 @@ For new projects or establishing guidelines:
 
 ```
 ROUTING: GOFER CONSTITUTION
-COMMAND: /gofer_constitution
+COMMAND: $ $gofer_constitution
 REASON: User wants to establish project principles
 ```
 
@@ -1003,7 +1020,7 @@ REASON: User wants to establish project principles
 After determining the route:
 
 1. Output the routing decision clearly
-2. Invoke the target command using the Skill tool
+2. Invoke the target command using the next command
 3. Let that command take over the workflow
 
 ### Auto-Chaining Behavior
@@ -1011,15 +1028,15 @@ After determining the route:
 The unified Gofer pipeline automatically chains commands:
 
 ```text
-/1_gofer_research completes  → auto-invokes /2_gofer_specify unless user pauses
-/2_gofer_specify completes  → auto-invokes /3_gofer_plan
-/3_gofer_plan completes     → auto-invokes /4_gofer_tasks
-/4_gofer_tasks completes    → auto-invokes /5_gofer_implement
-/5_gofer_implement completes→ auto-invokes /6_gofer_validate
-/6_gofer_validate completes → pipeline complete
+$ $1_gofer_research completes  → auto-invokes $ $2_gofer_specify unless user pauses
+$ $2_gofer_specify completes  → auto-invokes $ $3_gofer_plan
+$ $3_gofer_plan completes     → auto-invokes $ $4_gofer_tasks
+$ $4_gofer_tasks completes    → auto-invokes $ $5_gofer_implement
+$ $5_gofer_implement completes→ auto-invokes $ $6_gofer_validate
+$ $6_gofer_validate completes → pipeline complete
 ```
 
-**The user only needs to run `/0_business_scenario` once** - the orchestrator
+**The user only needs to run `$ $0_business_scenario` once** - the orchestrator
 handles everything else automatically.
 
 ---
@@ -1028,15 +1045,15 @@ handles everything else automatically.
 
 If the user needs to pause:
 
-1. Invoke `/7_gofer_save` to create checkpoint
+1. Invoke `$ $7_gofer_save` to create checkpoint
 2. Document current state
-3. User can resume later with `/8_gofer_resume`
+3. User can resume later with `$ $8_gofer_resume`
 
 If context window is filling up:
 
-1. Save progress with `/7_gofer_save`
+1. Save progress with `$ $7_gofer_save`
 2. Recommend user start new conversation
-3. User runs `/8_gofer_resume` in new session
+3. User runs `$ $8_gofer_resume` in new session
 
 ---
 
@@ -1060,26 +1077,26 @@ If context window is filling up:
 
 | Stage | Command               | Main output                        | Description                               |
 | ----- | --------------------- | ---------------------------------- | ----------------------------------------- |
-| 0     | `/0_business_scenario`| Full pipeline kickoff              | Business scenario intake and routing      |
-| 1     | `/1_gofer_research`   | research.md                        | Research and supporting review prep       |
-| 2     | `/2_gofer_specify`    | spec.md                            | Feature specification                     |
-| 3     | `/3_gofer_plan`       | plan.md, data-model.md, contracts/ | Technical architecture and contracts      |
-| 4     | `/4_gofer_tasks`      | tasks.md, traceability.md, issues.md | Dependency-ordered task breakdown       |
-| 5     | `/5_gofer_implement`  | Code and doc changes               | Execute the planned work                  |
-| 6     | `/6_gofer_validate`   | Validation artifacts               | Terminal quality gate, including review   |
+| 0     | `$ $0_business_scenario`| Full pipeline kickoff              | Business scenario intake and routing      |
+| 1     | `$ $1_gofer_research`   | research.md                        | Research and supporting review prep       |
+| 2     | `$ $2_gofer_specify`    | spec.md                            | Feature specification                     |
+| 3     | `$ $3_gofer_plan`       | plan.md, data-model.md, contracts/ | Technical architecture and contracts      |
+| 4     | `$ $4_gofer_tasks`      | tasks.md, traceability.md, issues.md | Dependency-ordered task breakdown       |
+| 5     | `$ $5_gofer_implement`  | Code and doc changes               | Execute the planned work                  |
+| 6     | `$ $6_gofer_validate`   | Validation artifacts               | Terminal quality gate, including review   |
 
 ### Helper Commands
 
 | Command                        | Purpose                                          |
 | ----------------------------- | ------------------------------------------------ |
-| `/0a_problem_validation`      | Optional deeper problem framing before research  |
-| `/7_gofer_save`               | Save session checkpoint                          |
-| `/7a_stakeholder_comms`       | Post-validation communications                   |
-| `/8_gofer_resume`             | Resume from checkpoint                           |
-| `/9_gofer_tests`              | Define test cases (DSL approach)                 |
-| `/10_gofer_cloud`             | Cloud infrastructure analysis (READ-ONLY)        |
-| `/gofer_hydrate`              | Reverse-engineer spec from code                  |
-| `/gofer_constitution`         | Project principles and standards                 |
+| `$ $0a_problem_validation`      | Optional deeper problem framing before research  |
+| `$ $7_gofer_save`               | Save session checkpoint                          |
+| `$ $7a_stakeholder_comms`       | Post-validation communications                   |
+| `$ $8_gofer_resume`             | Resume from checkpoint                           |
+| `$ $9_gofer_tests`              | Define test cases (DSL approach)                 |
+| `$ $10_gofer_cloud`             | Cloud infrastructure analysis (READ-ONLY)        |
+| `$ $gofer_hydrate`              | Reverse-engineer spec from code                  |
+| `$ $gofer_constitution`         | Project principles and standards                 |
 | `/gofer:check-workspace`      | Check whether the repo scaffold is healthy       |
 | `/gofer:bootstrap-workspace`  | Create or update the repo-owned scaffold         |
 
@@ -1161,3 +1178,14 @@ Log orchestrator routing:
 ```bash
 .specify/scripts/bash/log-stage.sh 0_orchestrator --route [command] --feature [name]
 ```
+
+
+## Pipeline Continuation
+
+This completes the 0_business_scenario stage. To continue the Gofer pipeline:
+
+**Next Command:** `$ $0a_problem_validation`
+
+The next stage will use the artifacts generated by this command and continue the implementation workflow.
+
+**Note:** Codex CLI does not support automatic command chaining. You must manually run each stage command to progress through the pipeline.

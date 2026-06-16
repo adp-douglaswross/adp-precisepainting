@@ -1,6 +1,26 @@
 ---
 name: gofer:vocabulary
-description: "Extract domain terminology into a canonical feature glossary."
+description: Gofer Vocabulary
+gofer:
+  workflowProfile: standard
+  canonicalSource: .specify/commands/gofer_vocabulary.md
+  canonicalChecksum: 725fe1c57b42f936db3bf9503b79715e04cfdec52276bff497f8d5fa72806044
+  metadataSource: extension/src/services/migration/ResourceSyncer.ts
+arguments:
+  - name: feature
+    description: Feature name or description
+    required: false
+result_schema:
+  type: object
+  properties:
+    output:
+      type: string
+      description: Path to generated artifact or execution summary
+    status:
+      type: string
+      enum:
+        - success
+        - error
 ---
 
 ## Workspace Preflight
@@ -10,7 +30,7 @@ Before doing stage/helper work:
 1. Resolve the repository root.
 2. Check the core Gofer sentinels:
    - `.specify/.gofer-version`
-   - `.specify/commands/0_business_scenario.md`
+   - `.specify/commands$ $0_business_scenario.md`
    - `.specify/templates/spec-template.md`
    - `.specify/scripts/bash/create-new-feature.sh`
    - `.specify/scripts/node/parse-stage-command.mjs`
@@ -26,7 +46,7 @@ Before doing stage/helper work:
    - Copilot: `.github/copilot-instructions.md`
    - VS Code extension mirrors Claude/Copilot/Gemini resources itself and should still keep the core scaffold healthy
 4. If the repo already has the workspace checker script, prefer running:
-   - `node .specify/scripts/node/gofer-workspace-check.mjs --host codex --json`
+   - `node .specify/scripts/node/gofer-workspace-check.mjs --host claude --json`
 5. If the workspace is missing or stale, ask exactly:
    - **"This repo is missing or stale for Gofer. Initialize/update it now?"**
 6. If the user says yes, run the Gofer workspace bootstrap helper and then resume this command from the top.

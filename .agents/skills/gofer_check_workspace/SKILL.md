@@ -1,6 +1,26 @@
 ---
 name: gofer:check-workspace
-description: "Check whether this repo is initialized for Gofer and explain any missing or stale scaffold."
+description: Gofer Workspace Check
+gofer:
+  workflowProfile: standard
+  canonicalSource: .specify/commands/gofer_check_workspace.md
+  canonicalChecksum: e0769c181e214c03c04ac738f5af89c1ee24addf0fe62abf1bd925c5ecd02e2b
+  metadataSource: extension/src/services/migration/ResourceSyncer.ts
+arguments:
+  - name: feature
+    description: Feature name or description
+    required: false
+result_schema:
+  type: object
+  properties:
+    output:
+      type: string
+      description: Path to generated artifact or execution summary
+    status:
+      type: string
+      enum:
+        - success
+        - error
 ---
 
 
@@ -40,7 +60,7 @@ subdirectory. If needed, walk upward to the nearest directory containing one of:
 Inspect these paths relative to the workspace root:
 
 - `.specify/.gofer-version`
-- `.specify/commands/0_business_scenario.md`
+- `.specify/commands$ $0_business_scenario.md`
 - `.specify/templates/spec-template.md`
 - `.specify/scripts/bash/create-new-feature.sh`
 - `.specify/scripts/node/parse-stage-command.mjs`

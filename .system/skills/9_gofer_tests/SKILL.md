@@ -1,6 +1,26 @@
 ---
 name: 9_gofer_tests
-description: "Generate comprehensive test suites from four testing perspectives for a target component."
+description: Gofer Tests
+gofer:
+  workflowProfile: standard
+  canonicalSource: .specify/commands/9_gofer_tests.md
+  canonicalChecksum: 751da40a594c94bc7c35728e60703ee6dcd8542d82cdc3cfe06da6d82371e5d3
+  metadataSource: extension/src/services/migration/ResourceSyncer.ts
+arguments:
+  - name: feature
+    description: Feature name or description
+    required: false
+result_schema:
+  type: object
+  properties:
+    output:
+      type: string
+      description: Path to generated artifact or execution summary
+    status:
+      type: string
+      enum:
+        - success
+        - error
 ---
 
 ## Workspace Preflight
@@ -10,7 +30,7 @@ Before doing stage/helper work:
 1. Resolve the repository root.
 2. Check the core Gofer sentinels:
    - `.specify/.gofer-version`
-   - `.specify/commands/0_business_scenario.md`
+   - `.specify/commands$ $0_business_scenario.md`
    - `.specify/templates/spec-template.md`
    - `.specify/scripts/bash/create-new-feature.sh`
    - `.specify/scripts/node/parse-stage-command.mjs`
@@ -26,7 +46,7 @@ Before doing stage/helper work:
    - Copilot: `.github/copilot-instructions.md`
    - VS Code extension mirrors Claude/Copilot/Gemini resources itself and should still keep the core scaffold healthy
 4. If the repo already has the workspace checker script, prefer running:
-   - `node .specify/scripts/node/gofer-workspace-check.mjs --host codex --json`
+   - `node .specify/scripts/node/gofer-workspace-check.mjs --host claude --json`
 5. If the workspace is missing or stale, ask exactly:
    - **"This repo is missing or stale for Gofer. Initialize/update it now?"**
 6. If the user says yes, run the Gofer workspace bootstrap helper and then resume this command from the top.
@@ -124,7 +144,7 @@ Parse JSON for FEATURE_DIR, then load:
 **CRITICAL**: Before writing any test cases, spawn a research agent:
 
 ```
-Task: subagent_type="codebase-pattern-finder", model="haiku"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the codebase-pattern-finder analysis in each., model="haiku"
 Prompt: "Find existing test files and patterns in this codebase.
 Identify:
 - Test file locations and naming conventions
@@ -498,16 +518,16 @@ Add test implementation tasks to tasks.md:
 ### Before Implementation
 
 ```
-/1_gofer_research  →  /2_gofer_specify  →  /3_gofer_plan
+$ $1_gofer_research  →  $ $2_gofer_specify  →  $ $3_gofer_plan
                                                  ↓
-                                          /9_gofer_tests  ← Define tests here
+                                          $ $9_gofer_tests  ← Define tests here
                                                  ↓
-                                          /4_gofer_tasks  →  /5_gofer_implement
+                                          $ $4_gofer_tasks  →  $ $5_gofer_implement
 ```
 
 ### During Implementation
 
-After each task in `/5_gofer_implement`:
+After each task in `$ $5_gofer_implement`:
 
 1. Run relevant tests
 2. Verify behavior matches test expectations

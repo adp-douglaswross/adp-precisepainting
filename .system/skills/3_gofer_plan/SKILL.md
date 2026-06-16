@@ -1,6 +1,26 @@
 ---
 name: 3_gofer_plan
-description: "Create a detailed technical implementation plan with architecture, data model, and contracts."
+description: Gofer Plan
+gofer:
+  workflowProfile: standard
+  canonicalSource: .specify/commands/3_gofer_plan.md
+  canonicalChecksum: 137d51faeaaca1353d8424511e023773922184abbe5035dfabdd6efbe4520d09
+  metadataSource: extension/src/services/migration/ResourceSyncer.ts
+arguments:
+  - name: feature
+    description: Feature name or description
+    required: false
+result_schema:
+  type: object
+  properties:
+    output:
+      type: string
+      description: Path to generated artifact or execution summary
+    status:
+      type: string
+      enum:
+        - success
+        - error
 ---
 
 ## Workspace Preflight
@@ -10,7 +30,7 @@ Before doing stage/helper work:
 1. Resolve the repository root.
 2. Check the core Gofer sentinels:
    - `.specify/.gofer-version`
-   - `.specify/commands/0_business_scenario.md`
+   - `.specify/commands$ $0_business_scenario.md`
    - `.specify/templates/spec-template.md`
    - `.specify/scripts/bash/create-new-feature.sh`
    - `.specify/scripts/node/parse-stage-command.mjs`
@@ -26,7 +46,7 @@ Before doing stage/helper work:
    - Copilot: `.github/copilot-instructions.md`
    - VS Code extension mirrors Claude/Copilot/Gemini resources itself and should still keep the core scaffold healthy
 4. If the repo already has the workspace checker script, prefer running:
-   - `node .specify/scripts/node/gofer-workspace-check.mjs --host codex --json`
+   - `node .specify/scripts/node/gofer-workspace-check.mjs --host claude --json`
 5. If the workspace is missing or stale, ask exactly:
    - **"This repo is missing or stale for Gofer. Initialize/update it now?"**
 6. If the user says yes, run the Gofer workspace bootstrap helper and then resume this command from the top.
@@ -88,8 +108,8 @@ full/dynamic-depth or the user asks for them.
 
 This command expects in `.specify/specs/{feature}/`:
 
-- `research.md` - Codebase analysis (from /1_gofer_research)
-- `spec.md` - Feature specification (from /2_gofer_specify)
+- `research.md` - Codebase analysis (from $ $1_gofer_research)
+- `spec.md` - Feature specification (from $ $2_gofer_specify)
 - `goal-ledger.json` - Objective ledger and re-loop triggers (from /1 and /2)
 
 If missing, prompt user to run the prerequisite stage.
@@ -169,7 +189,7 @@ independently and writes its output artifact.
 ### Agent 1: Implementation Plan Writer
 
 ```
-Task: subagent_type="general-purpose", model="sonnet"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the general-purpose analysis in each., model="sonnet"
 Prompt: "Generate a complete technical implementation plan for [FEATURE_NAME].
 
 Feature directory: {FEATURE_DIR}
@@ -235,7 +255,7 @@ Rules:
 - Resolve all unknowns — no NEEDS CLARIFICATION in the plan
 - App-delivery plans MUST make public-readiness, block porting, source platform
   decoupling, Storybook coverage, theme overrides, and package-profile work
-  visible enough for `/4_gofer_tasks` to emit first-class runnable tasks
+  visible enough for `$ $4_gofer_tasks` to emit first-class runnable tasks
 - Keep `goal-ledger.json` aligned with any planning-level changes to goals,
   delivery states, or re-loop triggers
 
@@ -252,7 +272,7 @@ Return a structured summary:
 ### Agent 2: Data Model Designer
 
 ```
-Task: subagent_type="general-purpose", model="sonnet"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the general-purpose analysis in each., model="sonnet"
 Prompt: "Design the data model for feature [FEATURE_NAME].
 
 Feature directory: {FEATURE_DIR}
@@ -280,7 +300,7 @@ Return: entity count, relationship count, entities with state machines"
 ### Agent 3: API Contract Designer
 
 ```
-Task: subagent_type="general-purpose", model="sonnet"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the general-purpose analysis in each., model="sonnet"
 Prompt: "Design API contracts for feature [FEATURE_NAME].
 
 Feature directory: {FEATURE_DIR}
@@ -313,7 +333,7 @@ Return: endpoint count, contract files created, user stories served"
 ### Agent 4: Quickstart Guide Writer
 
 ```
-Task: subagent_type="general-purpose", model="haiku"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the general-purpose analysis in each., model="haiku"
 Prompt: "Generate a quickstart testing guide for feature [FEATURE_NAME].
 
 Feature directory: {FEATURE_DIR}
@@ -343,17 +363,17 @@ contracts, dispatch three visual-writer sub-agents in parallel to produce the
 developer-persona-pack visuals:
 
 ```
-Task: subagent_type="visual-c4-writer", model="haiku"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the visual-c4-writer analysis in each., model="haiku"
 Prompt: "Generate C4 Context and Container diagrams for {FEATURE_NAME}.
 Feature dir: {FEATURE_DIR}. Read spec.md, research.md, plan.md.
 Output to {FEATURE_DIR}/visuals/c4-context.md and c4-container.md."
 
-Task: subagent_type="visual-bounded-context-writer", model="haiku"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the visual-bounded-context-writer analysis in each., model="haiku"
 Prompt: "Generate bounded-context map for {FEATURE_NAME}.
 Feature dir: {FEATURE_DIR}. Read plan.md, data-model.md, contracts/.
 Output to {FEATURE_DIR}/visuals/bounded-context.md."
 
-Task: subagent_type="visual-erd-writer", model="haiku"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the visual-erd-writer analysis in each., model="haiku"
 Prompt: "Generate data-model ERD for {FEATURE_NAME}.
 Feature dir: {FEATURE_DIR}. Read data-model.md.
 Output to {FEATURE_DIR}/visuals/data-model-erd.md."
@@ -361,7 +381,7 @@ Output to {FEATURE_DIR}/visuals/data-model-erd.md."
 
 These three artifacts (c4-container.md, bounded-context.md, data-model-erd.md)
 are required for the developer persona pack. The persona-pack completeness gate
-at /4_gofer_tasks start will warn if any are missing.
+at $ $4_gofer_tasks start will warn if any are missing.
 
 ### Dynamic-Only: Workflow DAG Writer
 
@@ -411,7 +431,7 @@ After all agents complete:
 Dispatch a validator agent to cross-check plan against spec:
 
 ```
-Task: subagent_type="general-purpose", model="haiku"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the general-purpose analysis in each., model="haiku"
 Prompt: "Validate plan coverage of specification for feature at {FEATURE_DIR}.
 
 Read:
@@ -458,7 +478,7 @@ For features with significant architectural decisions, spawn 5 agents each using
 a different pattern:
 
 ```
-Task: subagent_type="plan-architecture-diverger", model="sonnet"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the plan-architecture-diverger analysis in each., model="sonnet"
 Prompt: "Design architecture for [FEATURE] using Pattern [1-5].
 Pattern 1: Microservices/modular  2: Monolithic/cohesive  3: Event-sourced
 4: CQRS  5: Plugin-based
@@ -468,7 +488,7 @@ Spec: [FEATURE_DIR]/spec.md  Plan context: [summary of current plan]"
 Run all 5 in parallel, then judge:
 
 ```
-Task: subagent_type="multi-perspective-judge", model="opus"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the multi-perspective-judge analysis in each., model="opus"
 Prompt: "Judge verdict type: architecture selection.
 Select the best architecture for this feature considering codebase fit, complexity, and testability.
 [paste all 5 agent outputs]"
@@ -479,7 +499,7 @@ Select the best architecture for this feature considering codebase fit, complexi
 For features with API surfaces, compare paradigms:
 
 ```
-Task: subagent_type="plan-api-comparator", model="sonnet"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the plan-api-comparator analysis in each., model="sonnet"
 Prompt: "Design API for [FEATURE] using Paradigm [1-4].
 Paradigm 1: REST  2: GraphQL  3: RPC  4: Event-based
 Requirements: [API requirements from spec]"
@@ -488,7 +508,7 @@ Requirements: [API requirements from spec]"
 Run 3-4 in parallel, then judge:
 
 ```
-Task: subagent_type="multi-perspective-judge", model="opus"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the multi-perspective-judge analysis in each., model="opus"
 Prompt: "Judge verdict type: API paradigm selection.
 [paste all agent outputs]"
 ```
@@ -498,7 +518,7 @@ Prompt: "Judge verdict type: API paradigm selection.
 For features that modify existing code significantly:
 
 ```
-Task: subagent_type="plan-refactor-rewrite-advisor", model="sonnet"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the plan-refactor-rewrite-advisor analysis in each., model="sonnet"
 Prompt: "Perspective [1/2] for changing [CODE AREA].
 Perspective 1: Plan minimal incremental refactor
 Perspective 2: Plan clean rewrite
@@ -508,7 +528,7 @@ Current code: [file paths and summary]"
 Run both in parallel, then judge:
 
 ```
-Task: subagent_type="multi-perspective-judge", model="opus"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the multi-perspective-judge analysis in each., model="opus"
 Prompt: "Judge verdict type: refactor vs rewrite decision.
 [paste both agent outputs]"
 ```
@@ -518,7 +538,7 @@ Prompt: "Judge verdict type: refactor vs rewrite decision.
 When the feature requires migrating existing code or data:
 
 ```
-Task: subagent_type="plan-migration-path-finder", model="sonnet"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the plan-migration-path-finder analysis in each., model="sonnet"
 Prompt: "Design migration for [CHANGE] using Strategy [1-4].
 Strategy 1: Big bang  2: Strangler fig  3: Feature-flagged  4: Adapter/facade
 Migration scope: [what needs changing]"
@@ -527,7 +547,7 @@ Migration scope: [what needs changing]"
 Run all 4 in parallel, then judge:
 
 ```
-Task: subagent_type="multi-perspective-judge", model="opus"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the multi-perspective-judge analysis in each., model="opus"
 Prompt: "Judge verdict type: migration strategy selection.
 [paste all 4 agent outputs]"
 ```
@@ -537,7 +557,7 @@ Prompt: "Judge verdict type: migration strategy selection.
 For features with data models, stress-test before finalizing:
 
 ```
-Task: subagent_type="plan-data-model-stress-tester", model="haiku"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the plan-data-model-stress-tester analysis in each., model="haiku"
 Prompt: "Stress-test data model from Perspective [1-4].
 Perspective 1: 10x scale  2: Concurrent access  3: Schema evolution  4: Edge-case shapes
 Data model: [entities and relationships from plan]"
@@ -546,7 +566,7 @@ Data model: [entities and relationships from plan]"
 Run all 4 in parallel, then judge:
 
 ```
-Task: subagent_type="multi-perspective-judge", model="opus"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the multi-perspective-judge analysis in each., model="opus"
 Prompt: "Judge verdict type: data model robustness assessment.
 [paste all 4 agent outputs]"
 ```
@@ -579,7 +599,7 @@ catch misalignment early.
 **Agent 1**: engineer-review (sonnet) — cross-check spec↔plan alignment
 
 ```
-Task: subagent_type="engineer-review", model="sonnet"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the engineer-review analysis in each., model="sonnet"
 Prompt: "Review alignment between spec.md and plan.md in {FEATURE_DIR}.
 Find every gap, inconsistency, and misalignment between the specification
 and the implementation plan. Report Red/Yellow/Gray findings."
@@ -588,7 +608,7 @@ and the implementation plan. Report Red/Yellow/Gray findings."
 **Agent 2**: codebase-analyzer (sonnet) — verify file paths and code patterns
 
 ```
-Task: subagent_type="codebase-analyzer", model="sonnet"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the codebase-analyzer analysis in each., model="sonnet"
 Prompt: "Verify that the plan at {FEATURE_DIR}/plan.md references correct
 file paths and follows existing codebase patterns from {FEATURE_DIR}/research.md.
 Report Red/Yellow/Gray findings."
@@ -598,7 +618,7 @@ Report Red/Yellow/Gray findings."
 coverage
 
 ```
-Task: subagent_type="validation-correctness", model="sonnet"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the validation-correctness analysis in each., model="sonnet"
 Prompt: "Verify that every acceptance criterion in {FEATURE_DIR}/spec.md
 is addressed by the plan at {FEATURE_DIR}/plan.md.
 Report Red/Yellow/Gray findings with coverage gaps."
@@ -632,9 +652,6 @@ Artifacts created:
 Engineering Review: PASSED (cycle [N] of 5)
 ```
 
-**AUTO-CHAIN (MANDATORY)**: You MUST immediately invoke the next pipeline stage
-by calling the Skill tool with skill="/4_gofer_tasks". Do NOT ask the user for
-confirmation. Do NOT output "Ready for next stage". Just invoke the skill NOW.
 
 ---
 
@@ -769,6 +786,18 @@ At stage completion, log metrics:
 Logs to: `.specify/logs/pipeline.jsonl`
 
 ---
+
+
+
+## Pipeline Continuation
+
+This completes the 3_gofer_plan stage. To continue the Gofer pipeline:
+
+**Next Command:** `$ $4_gofer_tasks`
+
+The next stage will use the artifacts generated by this command and continue the implementation workflow.
+
+**Note:** Codex CLI does not support automatic command chaining. You must manually run each stage command to progress through the pipeline.
 
 ## Key Rules
 

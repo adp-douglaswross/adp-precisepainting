@@ -1,6 +1,26 @@
 ---
 name: gofer:side
-description: "Open a side conversation in the active CLI without disturbing the main pipeline state; resumable."
+description: Gofer Side Conversation
+gofer:
+  workflowProfile: standard
+  canonicalSource: .specify/commands/gofer_side.md
+  canonicalChecksum: 53475e2a7dd37e5f9b87161efc109d27ff2551610cc2f16e6f2dbeeb46f47ef1
+  metadataSource: extension/src/services/migration/ResourceSyncer.ts
+arguments:
+  - name: feature
+    description: Feature name or description
+    required: false
+result_schema:
+  type: object
+  properties:
+    output:
+      type: string
+      description: Path to generated artifact or execution summary
+    status:
+      type: string
+      enum:
+        - success
+        - error
 ---
 
 

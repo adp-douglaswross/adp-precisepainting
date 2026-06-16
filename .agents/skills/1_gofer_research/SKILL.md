@@ -1,6 +1,26 @@
 ---
 name: 1_gofer_research
-description: "Research codebase, CLI integrations, and technology landscape for the target feature."
+description: Gofer Research
+gofer:
+  workflowProfile: standard
+  canonicalSource: .specify/commands/1_gofer_research.md
+  canonicalChecksum: ed007b3edec093c9bc2c1944a1ac48e81826847b1ac7a46b54ded355918b646f
+  metadataSource: extension/src/services/migration/ResourceSyncer.ts
+arguments:
+  - name: feature
+    description: Feature name or description
+    required: false
+result_schema:
+  type: object
+  properties:
+    output:
+      type: string
+      description: Path to generated artifact or execution summary
+    status:
+      type: string
+      enum:
+        - success
+        - error
 ---
 
 ## Workspace Preflight
@@ -10,7 +30,7 @@ Before doing stage/helper work:
 1. Resolve the repository root.
 2. Check the core Gofer sentinels:
    - `.specify/.gofer-version`
-   - `.specify/commands/0_business_scenario.md`
+   - `.specify/commands$ $0_business_scenario.md`
    - `.specify/templates/spec-template.md`
    - `.specify/scripts/bash/create-new-feature.sh`
    - `.specify/scripts/node/parse-stage-command.mjs`
@@ -26,7 +46,7 @@ Before doing stage/helper work:
    - Copilot: `.github/copilot-instructions.md`
    - VS Code extension mirrors Claude/Copilot/Gemini resources itself and should still keep the core scaffold healthy
 4. If the repo already has the workspace checker script, prefer running:
-   - `node .specify/scripts/node/gofer-workspace-check.mjs --host codex --json`
+   - `node .specify/scripts/node/gofer-workspace-check.mjs --host claude --json`
 5. If the workspace is missing or stale, ask exactly:
    - **"This repo is missing or stale for Gofer. Initialize/update it now?"**
 6. If the user says yes, run the Gofer workspace bootstrap helper and then resume this command from the top.
@@ -215,7 +235,7 @@ only orchestrate and review agent outputs.
 ### Agent 1: Codebase Locator
 
 ```
-Task: subagent_type="codebase-locator", model="haiku"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the codebase-locator analysis in each., model="haiku"
 Prompt: "Find all code related to [FEATURE AREA] in this codebase.
 Identify: entry points, related files, directory structure, key classes/functions.
 Focus on: [specific aspects from user's description]"
@@ -224,7 +244,7 @@ Focus on: [specific aspects from user's description]"
 ### Agent 2: Codebase Analyzer
 
 ```
-Task: subagent_type="codebase-analyzer", model="sonnet"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the codebase-analyzer analysis in each., model="sonnet"
 Prompt: "Analyze how [RELATED FUNCTIONALITY] is implemented in this codebase.
 Explain: architecture patterns, data flow, key abstractions.
 Focus on: [how similar features work]"
@@ -233,7 +253,7 @@ Focus on: [how similar features work]"
 ### Agent 3: Pattern Finder
 
 ```
-Task: subagent_type="codebase-pattern-finder", model="haiku"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the codebase-pattern-finder analysis in each., model="haiku"
 Prompt: "Find examples of [PATTERN TYPE] in this codebase.
 Show: similar implementations we should model after.
 Include: file paths, code snippets, conventions used."
@@ -260,7 +280,7 @@ When the feature involves complex integration or unfamiliar territory, spawn 5
 perspective agents:
 
 ```
-Task: subagent_type="research-perspective-multiplier", model="haiku"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the research-perspective-multiplier analysis in each., model="haiku"
 Prompt: "Research [TOPIC] from perspective [1-5].
 Perspective 1: Existing codebase patterns
 Perspective 2: Open-source project approaches
@@ -273,7 +293,7 @@ Context: [summary of feature and existing research findings]"
 Run all 5 perspectives in parallel, then synthesize with judge:
 
 ```
-Task: subagent_type="multi-perspective-judge", model="opus"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the multi-perspective-judge analysis in each., model="opus"
 Prompt: "Judge verdict type: research synthesis.
 Synthesize these 5 research perspectives into a unified recommendation.
 [paste all 5 agent outputs]"
@@ -284,7 +304,7 @@ Synthesize these 5 research perspectives into a unified recommendation.
 When the research proposes new dependencies, evaluate each one:
 
 ```
-Task: subagent_type="research-dependency-evaluator", model="haiku"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the research-dependency-evaluator analysis in each., model="haiku"
 Prompt: "Evaluate [LIBRARY NAME] from perspective [1-3].
 Perspective 1: Evaluate the proposed library
 Perspective 2: Find alternatives
@@ -295,7 +315,7 @@ Needed functionality: [what we need from it]"
 Run all 3 perspectives in parallel, then synthesize with judge:
 
 ```
-Task: subagent_type="multi-perspective-judge", model="opus"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the multi-perspective-judge analysis in each., model="opus"
 Prompt: "Judge verdict type: dependency decision.
 Decide whether to adopt, find alternative, or build in-house.
 [paste all 3 agent outputs]"
@@ -306,7 +326,7 @@ Decide whether to adopt, find alternative, or build in-house.
 For features touching evolving technology areas:
 
 ```
-Task: subagent_type="research-horizon-scanner", model="haiku"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the research-horizon-scanner analysis in each., model="haiku"
 Prompt: "Scan for emerging alternatives and approaches relevant to [TOPIC].
 Current approach: [what we're considering]
 Tech stack: [relevant technologies]"
@@ -349,7 +369,7 @@ run:
   - Record `competitiveAnalysisEnabled=false` in research outputs.
   - Keep `market-analysis.md` as a baseline traceability artifact with
     disabled-state messaging (no comparative metrics).
-  - Continue to `/2_gofer_specify` normally (no stage failure).
+  - Continue to `$ $2_gofer_specify` normally (no stage failure).
 
 When enabled, `market-analysis.md` must include:
 
@@ -423,7 +443,7 @@ explicitly `enterpriseai`, generate:
    - Non-app runs MUST skip this artifact and record "Not applicable" in
      `research.md`.
 4. `{FEATURE_DIR}/eai-preflight.md` (EAI app delivery only, created by
-   `/0_business_scenario` when possible and updated here when missing or stale)
+   `$ $0_business_scenario` when possible and updated here when missing or stale)
    - Verify the safe public EAI source set used for research:
      `https://eai-tools.github.io/eai/docs/overview`,
      `https://eai-tools.github.io/eai/docs/api-reference`,
@@ -573,8 +593,8 @@ Reference `.specify/specs/{feature}/goal-ledger.json` and capture:
 
 - Goal IDs with business outcomes, metrics, targets, owners, and confidence
 - Delivery-state discipline (`mock`, `hybrid`, `live`) for each risky capability
-- Re-loop triggers that should reopen `/2_gofer_specify`, `/3_gofer_plan`,
-  `/4_gofer_tasks`, or `/6_gofer_validate`
+- Re-loop triggers that should reopen `$ $2_gofer_specify`, `$ $3_gofer_plan`,
+  `$ $4_gofer_tasks`, or `$ $6_gofer_validate`
 
 ## Structured Discovery Output
 
@@ -777,7 +797,7 @@ approvedAt: ''
 ## Approval
 
 - Status: supporting_context
-- Next action: carry any user feedback into `/2_gofer_specify`
+- Next action: carry any user feedback into `$ $2_gofer_specify`
 `````
 
 ---
@@ -840,9 +860,6 @@ Key findings:
 
 ```
 
-**AUTO-CHAIN (DEFAULT)**: Unless the user explicitly asks to stop after
-research, invoke the Skill tool with `skill="/2_gofer_specify"` immediately
-after the research summary and any critical clarification answers are captured.
 
 ---
 
@@ -1074,3 +1091,14 @@ helper was not run.
 
 These selectors are optional and do not change stage progress, routing, or
 pipeline state.
+
+
+## Pipeline Continuation
+
+This completes the 1_gofer_research stage. To continue the Gofer pipeline:
+
+**Next Command:** `$ $2_gofer_specify`
+
+The next stage will use the artifacts generated by this command and continue the implementation workflow.
+
+**Note:** Codex CLI does not support automatic command chaining. You must manually run each stage command to progress through the pipeline.

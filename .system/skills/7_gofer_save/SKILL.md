@@ -1,6 +1,26 @@
 ---
 name: 7_gofer_save
-description: "Save session state and create a handoff checkpoint for resumption in a new context."
+description: Gofer Save
+gofer:
+  workflowProfile: standard
+  canonicalSource: .specify/commands/7_gofer_save.md
+  canonicalChecksum: afff3e060612a0cae73dbf8ac96b84f407f2cfadbe277bd9ca5cc12e93e58ac6
+  metadataSource: extension/src/services/migration/ResourceSyncer.ts
+arguments:
+  - name: feature
+    description: Feature name or description
+    required: false
+result_schema:
+  type: object
+  properties:
+    output:
+      type: string
+      description: Path to generated artifact or execution summary
+    status:
+      type: string
+      enum:
+        - success
+        - error
 ---
 
 ## Workspace Preflight
@@ -10,7 +30,7 @@ Before doing stage/helper work:
 1. Resolve the repository root.
 2. Check the core Gofer sentinels:
    - `.specify/.gofer-version`
-   - `.specify/commands/0_business_scenario.md`
+   - `.specify/commands$ $0_business_scenario.md`
    - `.specify/templates/spec-template.md`
    - `.specify/scripts/bash/create-new-feature.sh`
    - `.specify/scripts/node/parse-stage-command.mjs`
@@ -26,7 +46,7 @@ Before doing stage/helper work:
    - Copilot: `.github/copilot-instructions.md`
    - VS Code extension mirrors Claude/Copilot/Gemini resources itself and should still keep the core scaffold healthy
 4. If the repo already has the workspace checker script, prefer running:
-   - `node .specify/scripts/node/gofer-workspace-check.mjs --host codex --json`
+   - `node .specify/scripts/node/gofer-workspace-check.mjs --host claude --json`
 5. If the workspace is missing or stale, ask exactly:
    - **"This repo is missing or stale for Gofer. Initialize/update it now?"**
 6. If the user says yes, run the Gofer workspace bootstrap helper and then resume this command from the top.
@@ -136,7 +156,7 @@ git diff --stat
 git add [specific files]
 git commit -m "WIP: [Feature] - [Current state description]
 
-Checkpoint created by /7_gofer_save
+Checkpoint created by $ $7_gofer_save
 Stage: [current pipeline stage]
 Next: [what needs to happen next]"
 ```
@@ -244,7 +264,7 @@ From tasks.md Protected Files section:
 ```bash
 cd [repo path]
 git checkout [branch]
-/8_gofer_resume
+$ $8_gofer_resume
 ```
 
 ### Manual Resume Steps
@@ -252,7 +272,7 @@ git checkout [branch]
 1. Read this checkpoint file
 2. Check `tasks.md` for current task
 3. Review `plan.md` for architecture context
-4. Continue with `/5_gofer_implement`
+4. Continue with `$ $5_gofer_implement`
 
 ### Context to Load First
 
@@ -281,7 +301,7 @@ Add checkpoint marker to tasks.md:
 ```markdown
 ## Checkpoint: [ISO timestamp]
 
-Progress saved at task [TaskID]. Resume with `/8_gofer_resume`.
+Progress saved at task [TaskID]. Resume with `$ $8_gofer_resume`.
 ````
 
 ---
@@ -305,12 +325,12 @@ Progress saved at task [TaskID]. Resume with `/8_gofer_resume`.
   - Tests: [passing/failing/not run]
 
   To resume:
-  /8_gofer_resume
+  $ $8_gofer_resume
 
   Or manually:
   cd [repo] && git checkout [branch]
   Read: {FEATURE_DIR}/session-checkpoint.md
-  Continue: /5_gofer_implement
+  Continue: $ $5_gofer_implement
 
 ================================================================
 ```
@@ -389,8 +409,8 @@ This ensures the resume session starts with clean context.
 
 This command works with:
 
-- `/8_gofer_resume` - Paired resume command
-- `/5_gofer_implement` - Can resume implementation
-- `/6_gofer_validate` - Can validate partial progress
-- `/0_business_scenario` - Detects saved sessions
+- `$ $8_gofer_resume` - Paired resume command
+- `$ $5_gofer_implement` - Can resume implementation
+- `$ $6_gofer_validate` - Can validate partial progress
+- `$ $0_business_scenario` - Detects saved sessions
 - `check-context-health.sh` - Triggers save at thresholds

@@ -1,6 +1,26 @@
 ---
 name: gofer_hydrate
-description: "Reverse-engineer specification from existing code (Hydration)."
+description: Gofer Hydrate
+gofer:
+  workflowProfile: standard
+  canonicalSource: .specify/commands/gofer_hydrate.md
+  canonicalChecksum: 7716b0fac9a5035be79ebadbe5b172baed68171539e4baa8058a991dd287aa9c
+  metadataSource: extension/src/services/migration/ResourceSyncer.ts
+arguments:
+  - name: feature
+    description: Feature name or description
+    required: false
+result_schema:
+  type: object
+  properties:
+    output:
+      type: string
+      description: Path to generated artifact or execution summary
+    status:
+      type: string
+      enum:
+        - success
+        - error
 ---
 
 ## Workspace Preflight
@@ -10,7 +30,7 @@ Before doing stage/helper work:
 1. Resolve the repository root.
 2. Check the core Gofer sentinels:
    - `.specify/.gofer-version`
-   - `.specify/commands/0_business_scenario.md`
+   - `.specify/commands$ $0_business_scenario.md`
    - `.specify/templates/spec-template.md`
    - `.specify/scripts/bash/create-new-feature.sh`
    - `.specify/scripts/node/parse-stage-command.mjs`
@@ -26,7 +46,7 @@ Before doing stage/helper work:
    - Copilot: `.github/copilot-instructions.md`
    - VS Code extension mirrors Claude/Copilot/Gemini resources itself and should still keep the core scaffold healthy
 4. If the repo already has the workspace checker script, prefer running:
-   - `node .specify/scripts/node/gofer-workspace-check.mjs --host codex --json`
+   - `node .specify/scripts/node/gofer-workspace-check.mjs --host claude --json`
 5. If the workspace is missing or stale, ask exactly:
    - **"This repo is missing or stale for Gofer. Initialize/update it now?"**
 6. If the user says yes, run the Gofer workspace bootstrap helper and then resume this command from the top.
@@ -98,7 +118,7 @@ Launch parallel agents to analyze the code:
 ### Agent 1: Code Analyzer
 
 ```
-Task: subagent_type="codebase-analyzer", model="sonnet"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the codebase-analyzer analysis in each., model="sonnet"
 Prompt: "Analyze the implementation of [TARGET CODE].
 Identify:
 - Core functionality and purpose
@@ -111,7 +131,7 @@ Identify:
 ### Agent 2: Test Analyzer
 
 ```
-Task: subagent_type="codebase-locator", model="haiku"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the codebase-locator analysis in each., model="haiku"
 Prompt: "Find all tests related to [TARGET CODE].
 Identify:
 - Test file locations
@@ -124,7 +144,7 @@ Identify:
 ### Agent 3: Usage Analyzer
 
 ```
-Task: subagent_type="codebase-pattern-finder", model="haiku"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the codebase-pattern-finder analysis in each., model="haiku"
 Prompt: "Find all usages of [TARGET CODE] in the codebase.
 Identify:
 - Who calls this code
@@ -210,7 +230,7 @@ source_files:
 # [Feature Title]
 
 > This specification was reverse-engineered from existing code using
-> `/gofer_hydrate`. It reflects the **current implementation**, not necessarily
+> `$ $gofer_hydrate`. It reflects the **current implementation**, not necessarily
 > the original requirements.
 
 ## Overview

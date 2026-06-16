@@ -1,6 +1,26 @@
 ---
 name: 7a_stakeholder_comms
-description: "Generate stakeholder-facing communications: release notes, demo scripts, and change briefs."
+description: Gofer Stakeholder Communications
+gofer:
+  workflowProfile: standard
+  canonicalSource: .specify/commands/7a_stakeholder_comms.md
+  canonicalChecksum: 6b062bc6d34dc3376e60b23d65b6da808f68f6b53e6c06deffed8f42814d1a39
+  metadataSource: extension/src/services/migration/ResourceSyncer.ts
+arguments:
+  - name: feature
+    description: Feature name or description
+    required: false
+result_schema:
+  type: object
+  properties:
+    output:
+      type: string
+      description: Path to generated artifact or execution summary
+    status:
+      type: string
+      enum:
+        - success
+        - error
 ---
 
 ## Workspace Preflight
@@ -10,7 +30,7 @@ Before doing stage/helper work:
 1. Resolve the repository root.
 2. Check the core Gofer sentinels:
    - `.specify/.gofer-version`
-   - `.specify/commands/0_business_scenario.md`
+   - `.specify/commands$ $0_business_scenario.md`
    - `.specify/templates/spec-template.md`
    - `.specify/scripts/bash/create-new-feature.sh`
    - `.specify/scripts/node/parse-stage-command.mjs`
@@ -26,7 +46,7 @@ Before doing stage/helper work:
    - Copilot: `.github/copilot-instructions.md`
    - VS Code extension mirrors Claude/Copilot/Gemini resources itself and should still keep the core scaffold healthy
 4. If the repo already has the workspace checker script, prefer running:
-   - `node .specify/scripts/node/gofer-workspace-check.mjs --host codex --json`
+   - `node .specify/scripts/node/gofer-workspace-check.mjs --host claude --json`
 5. If the workspace is missing or stale, ask exactly:
    - **"This repo is missing or stale for Gofer. Initialize/update it now?"**
 6. If the user says yes, run the Gofer workspace bootstrap helper and then resume this command from the top.
@@ -69,10 +89,10 @@ You **MUST** consider the user input before proceeding (if not empty).
 
 This command expects in `.specify/specs/{feature}/`:
 
-- `validation-report.md` — Feature validated (PASS) from /6_gofer_validate
-- `problem-brief.md` — Original business problem (from /0a_problem_validation)
-- `spec.md` — Feature specification (from /2_gofer_specify)
-- `spec-summary.md` — Executive summary (from /2_gofer_specify)
+- `validation-report.md` — Feature validated (PASS) from $ $6_gofer_validate
+- `problem-brief.md` — Original business problem (from $ $0a_problem_validation)
+- `spec.md` — Feature specification (from $ $2_gofer_specify)
+- `spec-summary.md` — Executive summary (from $ $2_gofer_specify)
 - `assumptions.md` — Tracked assumptions
 
 If `validation-report.md` doesn't exist or shows FAIL, do NOT generate comms.
@@ -101,7 +121,7 @@ Instead, inform the user that validation must pass first.
 
 - If **< 50%**: Proceed normally
 - If **50-70%**: Use sub-agents heavily
-- If **> 70%**: Run `/7_gofer_save` first
+- If **> 70%**: Run `$ $7_gofer_save` first
 
 ---
 
@@ -126,7 +146,7 @@ Instead, inform the user that validation must pass first.
 3. **Verify validation passed**:
    - Check `validation-report.md` for `status: PASS`
    - If FAIL: "Validation must pass before generating communications. Current
-     score: [N]/110. Run /6_gofer_validate first."
+     score: [N]/110. Run $ $6_gofer_validate first."
 
 ---
 
@@ -137,7 +157,7 @@ Launch both agents **in parallel**:
 ### Agent 1: Communications Writer
 
 ```
-Task: subagent_type="comms-writer", model="haiku"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the comms-writer analysis in each., model="haiku"
 Prompt: "Generate stakeholder communications for feature [FEATURE_NAME].
 
 Feature directory: {FEATURE_DIR}
@@ -164,7 +184,7 @@ Return structured report (<2000 tokens)."
 ### Agent 2: Business Metrics Analyzer
 
 ```
-Task: subagent_type="business-metrics-analyzer", model="haiku"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the business-metrics-analyzer analysis in each., model="haiku"
 Prompt: "Analyze pipeline metrics for business reporting.
 
 Feature directory: {FEATURE_DIR}
@@ -214,7 +234,7 @@ Populate with business-metrics-analyzer agent findings.
 Spawn the assumption-tracker agent to do a final review:
 
 ```
-Task: subagent_type="assumption-tracker", model="haiku"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the assumption-tracker analysis in each., model="haiku"
 Prompt: "Final assumption review for feature [FEATURE_NAME].
 
 Feature directory: {FEATURE_DIR}
@@ -244,7 +264,7 @@ Based on agent findings, update `{FEATURE_DIR}/assumptions.md`:
 If `{FEATURE_DIR}/problem-brief.md` exists, run scope creep detection:
 
 ```
-Task: subagent_type="scope-creep-detector", model="haiku"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the scope-creep-detector analysis in each., model="haiku"
 Prompt: "Analyze scope creep for feature [FEATURE_NAME].
 
 Feature directory: {FEATURE_DIR}
@@ -289,14 +309,14 @@ stakeholder communications explaining what changed and why.
   FEATURE PIPELINE COMPLETE!
 
   Full Pipeline Summary:
-  0a. /0a_problem_validation  ✓ (Problem validated)
-  1.  /1_gofer_research        ✓ (Codebase + market research)
-  2.  /2_gofer_specify         ✓ (Spec + business summary)
-  3.  /3_gofer_plan            ✓ (Technical architecture)
-  4.  /4_gofer_tasks           ✓ (Task breakdown)
-  5.  /5_gofer_implement       ✓ (Implementation)
-  6.  /6_gofer_validate        ✓ (Quality: [score]/110)
-  7a. /7a_stakeholder_comms    ✓ (Communications package)
+  0a. $ $0a_problem_validation  ✓ (Problem validated)
+  1.  $ $1_gofer_research        ✓ (Codebase + market research)
+  2.  $ $2_gofer_specify         ✓ (Spec + business summary)
+  3.  $ $3_gofer_plan            ✓ (Technical architecture)
+  4.  $ $4_gofer_tasks           ✓ (Task breakdown)
+  5.  $ $5_gofer_implement       ✓ (Implementation)
+  6.  $ $6_gofer_validate        ✓ (Quality: [score]/110)
+  7a. $ $7a_stakeholder_comms    ✓ (Communications package)
 
   The feature is ready for stakeholder review and deployment.
 ════════════════════════════════════════════════════════════════

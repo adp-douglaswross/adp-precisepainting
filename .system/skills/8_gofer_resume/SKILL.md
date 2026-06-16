@@ -1,6 +1,26 @@
 ---
 name: 8_gofer_resume
-description: "Resume a previous Gofer session from a saved checkpoint file."
+description: Gofer Resume
+gofer:
+  workflowProfile: standard
+  canonicalSource: .specify/commands/8_gofer_resume.md
+  canonicalChecksum: cda6a84f67b63eb439224edc576dfa4a3a516df393e6558e180756a50b0425b8
+  metadataSource: extension/src/services/migration/ResourceSyncer.ts
+arguments:
+  - name: feature
+    description: Feature name or description
+    required: false
+result_schema:
+  type: object
+  properties:
+    output:
+      type: string
+      description: Path to generated artifact or execution summary
+    status:
+      type: string
+      enum:
+        - success
+        - error
 ---
 
 ## Workspace Preflight
@@ -10,7 +30,7 @@ Before doing stage/helper work:
 1. Resolve the repository root.
 2. Check the core Gofer sentinels:
    - `.specify/.gofer-version`
-   - `.specify/commands/0_business_scenario.md`
+   - `.specify/commands$ $0_business_scenario.md`
    - `.specify/templates/spec-template.md`
    - `.specify/scripts/bash/create-new-feature.sh`
    - `.specify/scripts/node/parse-stage-command.mjs`
@@ -26,7 +46,7 @@ Before doing stage/helper work:
    - Copilot: `.github/copilot-instructions.md`
    - VS Code extension mirrors Claude/Copilot/Gemini resources itself and should still keep the core scaffold healthy
 4. If the repo already has the workspace checker script, prefer running:
-   - `node .specify/scripts/node/gofer-workspace-check.mjs --host codex --json`
+   - `node .specify/scripts/node/gofer-workspace-check.mjs --host claude --json`
 5. If the workspace is missing or stale, ask exactly:
    - **"This repo is missing or stale for Gofer. Initialize/update it now?"**
 6. If the user says yes, run the Gofer workspace bootstrap helper and then resume this command from the top.
@@ -278,7 +298,7 @@ Code Status:
 - Tests: [passing/failing/skipped]
 - Changes since save: [N commits]
 
-Ready to continue with: /5_gofer_implement
+Ready to continue with: $ $5_gofer_implement
 
 Or I can pick up exactly where we left off...
 
@@ -298,7 +318,7 @@ If user says "continue" or similar:
 1. Load the current task details
 2. Open the file at the saved location
 3. Continue implementing from that point
-4. Follow normal `/5_gofer_implement` flow
+4. Follow normal `$ $5_gofer_implement` flow
 
 ### Option B: Manual Navigation
 
@@ -315,7 +335,7 @@ If user wants to review first:
 ### Pattern 1: Quick Resume (Same Day)
 
 ```
-/8_gofer_resume
+$ $8_gofer_resume
 
 > Continue the user management feature from this morning
 
@@ -328,7 +348,7 @@ If user wants to review first:
 ### Pattern 2: Full Context Restore (Days Later)
 
 ```
-/8_gofer_resume .specify/specs/auth-feature/
+$ $8_gofer_resume .specify/specs/auth-feature/
 
 # Claude:
 1. Reads full checkpoint
@@ -341,7 +361,7 @@ If user wants to review first:
 ### Pattern 3: Recovery Mode (No Checkpoint)
 
 ```
-/8_gofer_resume
+$ $8_gofer_resume
 
 # Claude:
 1. No checkpoint found
@@ -424,9 +444,9 @@ Would you like me to:
 
 This command works with:
 
-- `/7_gofer_save` - Paired save command
-- `/5_gofer_implement` - Continues implementation
-- `/0_business_scenario` - Can route to resume
+- `$ $7_gofer_save` - Paired save command
+- `$ $5_gofer_implement` - Continues implementation
+- `$ $0_business_scenario` - Can route to resume
 - All other Gofer commands - Can be invoked after resume
 
 ---

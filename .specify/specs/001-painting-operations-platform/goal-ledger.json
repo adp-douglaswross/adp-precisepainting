@@ -1,0 +1,39 @@
+{
+  "feature": "001-painting-operations-platform",
+  "goals": [
+    {
+      "id": "G1",
+      "outcome": "Reduce quote-to-approved-job cycle time",
+      "metric": "Median quote_to_approval_minutes",
+      "target": "-40%",
+      "owner": "HQ Operations",
+      "confidence": 0.85,
+      "deliveryState": "hybrid"
+    },
+    {
+      "id": "G2",
+      "outcome": "Improve workforce control quality",
+      "metric": "Timesheet/payroll correction ratio",
+      "target": "-60%",
+      "owner": "Payroll Lead",
+      "confidence": 0.8,
+      "deliveryState": "hybrid"
+    },
+    {
+      "id": "G3",
+      "outcome": "Accelerate invoicing closeout",
+      "metric": "Same-day invoice issuance",
+      "target": ">=80%",
+      "owner": "Finance Ops",
+      "confidence": 0.82,
+      "deliveryState": "hybrid"
+    }
+  ],
+  "reloopTriggers": [
+    "objective_drift",
+    "assumption_expiry",
+    "contract_drift",
+    "ux_scope_change",
+    "post_validation_code_or_test_change"
+  ]
+}

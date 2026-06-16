@@ -1,6 +1,26 @@
 ---
 name: gofer:eai-first-run
-description: "Prepare a new machine or repo for the first EAI Gofer app build."
+description: EAI Gofer First Run
+gofer:
+  workflowProfile: standard
+  canonicalSource: .specify/commands/gofer_eai_first_run.md
+  canonicalChecksum: 4c73f86f503cebb075f953a237adba43b1e396e42dafe66cf2fb55f22c8de16c
+  metadataSource: extension/src/services/migration/ResourceSyncer.ts
+arguments:
+  - name: feature
+    description: Feature name or description
+    required: false
+result_schema:
+  type: object
+  properties:
+    output:
+      type: string
+      description: Path to generated artifact or execution summary
+    status:
+      type: string
+      enum:
+        - success
+        - error
 ---
 
 ## Token And Cost Policy
@@ -24,7 +44,7 @@ Before spawning agents, calling tools, or loading large files:
 # EAI Gofer First Run
 
 Use this command when the user is starting their first EAI Platform app, when
-`/0_business_scenario` is unavailable in a new repository, or when an EAI app
+`$ $0_business_scenario` is unavailable in a new repository, or when an EAI app
 build reaches the Gofer pipeline before the local machine, workspace, tenant, or
 EAI app template is ready.
 
@@ -217,7 +237,7 @@ directory or stop.
 After `eai init`, verify Gofer files exist:
 
 - `.specify/.gofer-version`
-- `.specify/commands/0_business_scenario.md`
+- `.specify/commands$ $0_business_scenario.md`
 - `.specify/templates/spec-template.md`
 - `.specify/scripts/node/gofer-workspace-check.mjs`
 - `.specify/memory/gofer-model-policy.yaml`
@@ -299,10 +319,10 @@ When the app folder, EAI CLI, login, tenant, EAI template, and Gofer scaffold ar
 ready, tell the user to start:
 
 ```text
-/0_business_scenario <what you want to build>
+$ $0_business_scenario <what you want to build>
 ```
 
-If `/0_business_scenario` is still unknown after the plugin is installed and the
+If `$ $0_business_scenario` is still unknown after the plugin is installed and the
 repo is bootstrapped, explain that the host has not loaded the Gofer plugin or
 repo commands yet. Give the host-specific install/update command from the Gofer
 README, then retry this command after the host reloads.

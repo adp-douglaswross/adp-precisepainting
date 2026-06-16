@@ -1,6 +1,26 @@
 ---
 name: gofer:personality
-description: "Set the assistant personality for this Gofer session: friendly, pragmatic, or none (default)."
+description: Gofer Personality
+gofer:
+  workflowProfile: standard
+  canonicalSource: .specify/commands/gofer_personality.md
+  canonicalChecksum: 9682d1dad87ce55681faab6d25bfe5054aca398d6c19072b69899864b8e64da6
+  metadataSource: extension/src/services/migration/ResourceSyncer.ts
+arguments:
+  - name: feature
+    description: Feature name or description
+    required: false
+result_schema:
+  type: object
+  properties:
+    output:
+      type: string
+      description: Path to generated artifact or execution summary
+    status:
+      type: string
+      enum:
+        - success
+        - error
 ---
 
 

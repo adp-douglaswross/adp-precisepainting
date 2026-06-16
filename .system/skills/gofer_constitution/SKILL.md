@@ -1,6 +1,26 @@
 ---
 name: gofer_constitution
-description: "Create or update project constitution with coding principles and guidelines."
+description: Gofer Constitution
+gofer:
+  workflowProfile: standard
+  canonicalSource: .specify/commands/gofer_constitution.md
+  canonicalChecksum: c72bb3346247c1a7a4e8ae53fed239989dc2a5a9b90d4f87572f19fd38b2afd2
+  metadataSource: extension/src/services/migration/ResourceSyncer.ts
+arguments:
+  - name: feature
+    description: Feature name or description
+    required: false
+result_schema:
+  type: object
+  properties:
+    output:
+      type: string
+      description: Path to generated artifact or execution summary
+    status:
+      type: string
+      enum:
+        - success
+        - error
 ---
 
 ## Workspace Preflight
@@ -10,7 +30,7 @@ Before doing stage/helper work:
 1. Resolve the repository root.
 2. Check the core Gofer sentinels:
    - `.specify/.gofer-version`
-   - `.specify/commands/0_business_scenario.md`
+   - `.specify/commands$ $0_business_scenario.md`
    - `.specify/templates/spec-template.md`
    - `.specify/scripts/bash/create-new-feature.sh`
    - `.specify/scripts/node/parse-stage-command.mjs`
@@ -26,7 +46,7 @@ Before doing stage/helper work:
    - Copilot: `.github/copilot-instructions.md`
    - VS Code extension mirrors Claude/Copilot/Gemini resources itself and should still keep the core scaffold healthy
 4. If the repo already has the workspace checker script, prefer running:
-   - `node .specify/scripts/node/gofer-workspace-check.mjs --host codex --json`
+   - `node .specify/scripts/node/gofer-workspace-check.mjs --host claude --json`
 5. If the workspace is missing or stale, ask exactly:
    - **"This repo is missing or stale for Gofer. Initialize/update it now?"**
 6. If the user says yes, run the Gofer workspace bootstrap helper and then resume this command from the top.
@@ -172,7 +192,7 @@ What would you like to update in the constitution?
 Before writing principles, understand current codebase:
 
 ```
-Task: subagent_type="codebase-pattern-finder", model="haiku"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the codebase-pattern-finder analysis in each., model="haiku"
 Prompt: "Analyze the codebase for existing patterns and conventions.
 Find:
 - Naming conventions (files, variables, functions)
@@ -479,7 +499,7 @@ After creating/updating, validate:
 ### Codebase Alignment Check
 
 ```
-Task: subagent_type="codebase-analyzer", model="sonnet"
+**Note**: Codex CLI does not support the Task tool. For parallel agent work, open multiple Codex CLI sessions and run the codebase-analyzer analysis in each., model="sonnet"
 Prompt: "Check if the codebase follows these constitution principles:
 [List key principles]
 Report any violations or areas needing attention."
@@ -521,7 +541,7 @@ Report any violations or areas needing attention."
   1. Review with team
   2. Address any violations found
   3. Add to onboarding documentation
-  4. Reference in /3_gofer_plan for alignment checks
+  4. Reference in $ $3_gofer_plan for alignment checks
 
 ================================================================
 ```
@@ -530,7 +550,7 @@ Report any violations or areas needing attention."
 
 ## Integration with Pipeline
 
-### During Planning (/3_gofer_plan)
+### During Planning ($ $3_gofer_plan)
 
 ```markdown
 ## Constitution Check
@@ -540,11 +560,11 @@ Report any violations or areas needing attention."
 - [ ] P3: [Principle] - Exception needed (see ADR-NNN)
 ```
 
-### During Implementation (/5_gofer_implement)
+### During Implementation ($ $5_gofer_implement)
 
 Before each task, verify implementation follows constitution.
 
-### During Validation (/6_gofer_validate)
+### During Validation ($ $6_gofer_validate)
 
 ```markdown
 ## Constitution Compliance
@@ -562,7 +582,7 @@ Before each task, verify implementation follows constitution.
 
 When learnings emerge from feature work:
 
-1. Run `/gofer_constitution` with update flag
+1. Run `$ $gofer_constitution` with update flag
 2. Add new principles or modify existing
 3. Create ADR for significant changes
 4. Update version history
