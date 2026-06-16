@@ -1,0 +1,1638 @@
+{
+  "schemaVersion": 1,
+  "cli": {
+    "version": "3.2.6"
+  },
+  "packages": {
+    "profile": "external",
+    "source": "eai-packages",
+    "recordedAt": "2026-06-16T13:38:02.455Z"
+  },
+  "template": {
+    "repo": "https://github.com/eai-tools/eai-app-template.git",
+    "commit": "97967992f025ab8e488593c3184ac2f199d191ce",
+    "displaySource": "eai-tools/eai-app-template@9796799",
+    "initializedAt": "2026-06-16T13:38:02.455Z"
+  },
+  "gofer": {
+    "bundle": {
+      "commit": "6c70820a6c4e3b752cf3a547e80c256531795b12",
+      "describe": "v3.6.0"
+    },
+    "managedFiles": {
+      ".agents/skills/0_business_scenario/SKILL.md": {
+        "sha256": "806b2bc508d116723c8dffb359089f1884160e09e46d4ef75ee061f9ac012815",
+        "source": "bundled"
+      },
+      ".agents/skills/0a_problem_validation/SKILL.md": {
+        "sha256": "f51f64557454af26051a19a9becf9c13cbd6dd7d1a0ad5fafc90ad6b04513c12",
+        "source": "bundled"
+      },
+      ".agents/skills/1_gofer_research/SKILL.md": {
+        "sha256": "66810780ffd1c763a9f01abdc052a833c098809cd0b619455a74126ebcd81ca4",
+        "source": "bundled"
+      },
+      ".agents/skills/10_gofer_cloud/SKILL.md": {
+        "sha256": "4d58200e250b67b65bc1c7c71d3ee2b191c6d3c48a5a9c82b4aee415f9d6ac7e",
+        "source": "bundled"
+      },
+      ".agents/skills/2_gofer_specify/SKILL.md": {
+        "sha256": "8b313f920b740ebe408d48ca002d048a0713f0ca05169a55f25590c8c56ad285",
+        "source": "bundled"
+      },
+      ".agents/skills/3_gofer_plan/SKILL.md": {
+        "sha256": "e06a48442157e60b495b6999b400ab29fa93449d3a3c552bd6679d194fe5cac9",
+        "source": "bundled"
+      },
+      ".agents/skills/4_gofer_tasks/SKILL.md": {
+        "sha256": "3112067b24cbbffc64a20e0cc85755bafa2e85ef29a86328bbff3a4a28f23519",
+        "source": "bundled"
+      },
+      ".agents/skills/5_gofer_implement/SKILL.md": {
+        "sha256": "c24ee0be3e3253c907c4624c2e991252cf8cdc4454cdb5e34cc5346149c8b3ad",
+        "source": "bundled"
+      },
+      ".agents/skills/6_gofer_validate/SKILL.md": {
+        "sha256": "c3094e40bed660ab0be32e9b7558f11144d3a5dedc7deb1e00f54ec6af266744",
+        "source": "bundled"
+      },
+      ".agents/skills/7_gofer_save/SKILL.md": {
+        "sha256": "7f4807372d6371d148075f4842a6f1b22c191528ccac89ea839a4a6aa732a164",
+        "source": "bundled"
+      },
+      ".agents/skills/7a_stakeholder_comms/SKILL.md": {
+        "sha256": "e87262ccf25e09e8710f406f385a8c7682412abf10ff16da347e18ec63fe95b3",
+        "source": "bundled"
+      },
+      ".agents/skills/8_gofer_resume/SKILL.md": {
+        "sha256": "eb8b9f024c193d9219358737c40b8aa483ddba72cd724e7959c40e74e50b430f",
+        "source": "bundled"
+      },
+      ".agents/skills/9_gofer_tests/SKILL.md": {
+        "sha256": "4d346083d88fcdca8990b3a1ee6ea1c72b452bce459bf7ae56d61924efb1a82b",
+        "source": "bundled"
+      },
+      ".agents/skills/gofer_bootstrap_workspace/SKILL.md": {
+        "sha256": "b8928a501d2ff1358562880cf45ce83a0d1f4c2c9c252a3bf65d731e736a1427",
+        "source": "bundled"
+      },
+      ".agents/skills/gofer_check_workspace/SKILL.md": {
+        "sha256": "51f16c68a78ac6ca695b17c3e12fbceb8b75ec1f304a64752f8d9053f464c596",
+        "source": "bundled"
+      },
+      ".agents/skills/gofer_constitution/SKILL.md": {
+        "sha256": "e66fb9828cae7e609af079420589a9cbe390bf0796ea9a0bf6e5321a7acde891",
+        "source": "bundled"
+      },
+      ".agents/skills/gofer_diagnose/SKILL.md": {
+        "sha256": "1c9bdbec239b062a7eb3bdc301f46291303087dbda43184ea422d5d4e8a69e1b",
+        "source": "bundled"
+      },
+      ".agents/skills/gofer_eai_first_run/SKILL.md": {
+        "sha256": "34ecfc460d108e8f7f6e13f3c38beda915d0a0b1cb5b32d23c95d4312416b25b",
+        "source": "bundled"
+      },
+      ".agents/skills/gofer_hydrate/SKILL.md": {
+        "sha256": "0af4f8fa85c70337e2eddf67dfa5a766a17504522e28994e344a5e14538b2082",
+        "source": "bundled"
+      },
+      ".agents/skills/gofer_personality/SKILL.md": {
+        "sha256": "58734941981e574778e4bc3555646e22f0967c38a7dc26cc8535a827c473eafb",
+        "source": "bundled"
+      },
+      ".agents/skills/gofer_plan/SKILL.md": {
+        "sha256": "d84c68fbb32db515c5fded649bc3411b9e115c00657518a28ef485769b71c5fc",
+        "source": "bundled"
+      },
+      ".agents/skills/gofer_side/SKILL.md": {
+        "sha256": "9b3df579c5086642ce341ee904af8eba17314e13d25a77d256362664803c09e0",
+        "source": "bundled"
+      },
+      ".agents/skills/gofer_spec_summary/SKILL.md": {
+        "sha256": "e332980b1dc4d7b34f0a764817017a1126f0a551123f7115a48ac890376d9892",
+        "source": "bundled"
+      },
+      ".agents/skills/gofer_tdd/SKILL.md": {
+        "sha256": "d52d1e845e11033d5f731597c01741d3d32fb106105ad325c31377730bbe9e51",
+        "source": "bundled"
+      },
+      ".agents/skills/gofer_vocabulary/SKILL.md": {
+        "sha256": "9d435cac77046e76942b896fbd7bb1f0a132674d65e1b77d800ec589035b2021",
+        "source": "bundled"
+      },
+      ".agents/skills/gofer_zoom_out/SKILL.md": {
+        "sha256": "c7d1d8d6954083b536813c177314811f1d941f48efe9fd08696e5184d64d2a28",
+        "source": "bundled"
+      },
+      ".claude/agents/assumption-tracker.md": {
+        "sha256": "bd345269eb3ac11fda9c3d314344f65072e429997542a3525bb89c96df5b4593",
+        "source": "bundled"
+      },
+      ".claude/agents/business-metrics-analyzer.md": {
+        "sha256": "e328e964e134b7a48f908360147ac08e2608991cec528d321785e1961b88cdc1",
+        "source": "bundled"
+      },
+      ".claude/agents/business-problem-validator.md": {
+        "sha256": "423d884387d7dc45caa99b3e49d4439bfaa792bbf3ed94ed5eb8ceb802a4d31d",
+        "source": "bundled"
+      },
+      ".claude/agents/codebase-analyzer.md": {
+        "sha256": "f58a79025f14e2f0ac8500a0d27f3061364d50305cdf6daa880380d6e0417df7",
+        "source": "bundled"
+      },
+      ".claude/agents/codebase-locator.md": {
+        "sha256": "369c49d1c9143c4cc68f8b2655119fc0c567f50806457bb18be0d944a4de6513",
+        "source": "bundled"
+      },
+      ".claude/agents/codebase-pattern-finder.md": {
+        "sha256": "67b5b3bc3608921a4617266e6416b02f489fbed30da5d883c77e638cb3bf177a",
+        "source": "bundled"
+      },
+      ".claude/agents/comms-writer.md": {
+        "sha256": "00178aedba805c4a933c458e7790d1536485d2d7b81ad0f1ee69e3be1ed4a7a6",
+        "source": "bundled"
+      },
+      ".claude/agents/engineer-review.md": {
+        "sha256": "444d27ee4480078231c5d50d3aeaadf4db329ca17e12ac99bf2f9c0623ec7b36",
+        "source": "bundled"
+      },
+      ".claude/agents/implement-bug-triangulator.md": {
+        "sha256": "b260f631f464e94f03c828dcf00ad8961b2da9d6c2f28496e8bb11f0384a7e22",
+        "source": "bundled"
+      },
+      ".claude/agents/implement-code-review-council.md": {
+        "sha256": "c77b74968e3f7dad93cf4bf48630fdabc8a2a9b399f30c956052c80c4df68113",
+        "source": "bundled"
+      },
+      ".claude/agents/implement-doc-writer.md": {
+        "sha256": "9025988b0699f01e28d08b156d38ab02abca64127a40e38d43377bc65b822360",
+        "source": "bundled"
+      },
+      ".claude/agents/implement-error-hardener.md": {
+        "sha256": "1e9a9e0f289e933e40cae77bd68740e56136891f4d127ae2a7b6c7b0cf38b418",
+        "source": "bundled"
+      },
+      ".claude/agents/implement-performance-explorer.md": {
+        "sha256": "61741c6fa92ef983e8d7a19fbefd252b41392d3f6ba696b0bebaf26ebc9d2a9c",
+        "source": "bundled"
+      },
+      ".claude/agents/implement-test-diversifier.md": {
+        "sha256": "e0ff889b21c556443be36909eae92262737b8837400cd2f20d9df9fac5ec118e",
+        "source": "bundled"
+      },
+      ".claude/agents/implement-variant-generator.md": {
+        "sha256": "1af9aaf3d3dbb01740d37670d8d9c93b5803f723a8c2f9428b9e0ea71e89f8a5",
+        "source": "bundled"
+      },
+      ".claude/agents/multi-perspective-judge.md": {
+        "sha256": "36fbd2c10599499b5194b1a47600731112251f3abad3afa72e47b1f6e3933472",
+        "source": "bundled"
+      },
+      ".claude/agents/plan-api-comparator.md": {
+        "sha256": "04caad3209e0266782962f9c15fc9f26f241adff1628fddeb5603fa5182c7ee4",
+        "source": "bundled"
+      },
+      ".claude/agents/plan-architecture-diverger.md": {
+        "sha256": "8bad4a8551894201356deffe309d1376cfd7779c3c96e98ef5ef76110a83cd2f",
+        "source": "bundled"
+      },
+      ".claude/agents/plan-data-model-stress-tester.md": {
+        "sha256": "e43335a7b53ead404b70260a29b4b4bffc8f788fbc65025655ed5dd857541fd2",
+        "source": "bundled"
+      },
+      ".claude/agents/plan-migration-path-finder.md": {
+        "sha256": "d1c1d437037fb68bfdf73462a66ef7bec6029a23c91eb80a778f9f2124a27cac",
+        "source": "bundled"
+      },
+      ".claude/agents/plan-refactor-rewrite-advisor.md": {
+        "sha256": "19aab98fe0f69747e6a6251fd280569a776b6e290d7545ccb8b8e9475f88082f",
+        "source": "bundled"
+      },
+      ".claude/agents/research-dependency-evaluator.md": {
+        "sha256": "dcfdd8cad828c3187b9b0ee742647864fc25a366053af267e6dfb46491910df6",
+        "source": "bundled"
+      },
+      ".claude/agents/research-horizon-scanner.md": {
+        "sha256": "5da502c17470b591a9a76e866a73df69ff86fbb99689f9d8fbe1a88acb0289cc",
+        "source": "bundled"
+      },
+      ".claude/agents/research-market-scanner.md": {
+        "sha256": "8868e79cef6b0800031bf3234c2ddc8aec3ce9035cf563d9ce126d5ac22e14fd",
+        "source": "bundled"
+      },
+      ".claude/agents/research-perspective-multiplier.md": {
+        "sha256": "f6b44a801d7e0ec4c595116eadc3e85206cea87b5a40e4e9f13879e542fae2c7",
+        "source": "bundled"
+      },
+      ".claude/agents/scope-creep-detector.md": {
+        "sha256": "fe3e1ff3237a2d65c88ee8355f710014c9fc8d002528852a616ae9e9fffebb49",
+        "source": "bundled"
+      },
+      ".claude/agents/specify-ambiguity-detector.md": {
+        "sha256": "639bffab0fbcbbb906623e6f03037c16d7cac606f8a54fa6dea0e1b4e6a47afb",
+        "source": "bundled"
+      },
+      ".claude/agents/specify-journey-stress-tester.md": {
+        "sha256": "e7460aa37f53fbb16fbbd0beef8a89bd06679f1032a93e3fc14575261fa7c00b",
+        "source": "bundled"
+      },
+      ".claude/agents/tasks-cross-cutting-scanner.md": {
+        "sha256": "340a30458b774eb6e04446ca48b5fdc526add20e24721077e5e084f6230839bf",
+        "source": "bundled"
+      },
+      ".claude/agents/tasks-rollback-planner.md": {
+        "sha256": "632f528bfd7248a36676b72e197788d46bd926bd04907d5008946221e174d6df",
+        "source": "bundled"
+      },
+      ".claude/agents/validate-security-red-team.md": {
+        "sha256": "867fbed5a50cb1d22de8dfc701a19b1657f7c51665ada9a4e71b74a26a24d8c7",
+        "source": "bundled"
+      },
+      ".claude/agents/validation-correctness.md": {
+        "sha256": "784b8e0aebfa3d4eb1aae6785efc51db84e780d08c8fdf43b51401de6745959c",
+        "source": "bundled"
+      },
+      ".claude/agents/validation-integration.md": {
+        "sha256": "eaba7207fe403470d12e67ef91f5a4c1a18b07c0f6aa7b211bd6103354afb4a4",
+        "source": "bundled"
+      },
+      ".claude/agents/validation-performance.md": {
+        "sha256": "1bd24d3417abd98f7dc8086b0992f1105993eb2eb2f68f71b102feb34b0fccbe",
+        "source": "bundled"
+      },
+      ".claude/agents/validation-security.md": {
+        "sha256": "5a26c550610b2adf0621b80910103cc48a2197bde60db7df434364c8539326dd",
+        "source": "bundled"
+      },
+      ".claude/agents/validation-standards.md": {
+        "sha256": "88575dd00db0252e1e20bbc8f7d2ee126e293379e12ea2d458421019935892d5",
+        "source": "bundled"
+      },
+      ".claude/agents/validation-test-quality.md": {
+        "sha256": "bc053a38f9a70970a174208f0627527b9d1dfefed0515a4b145628e3d022a3e0",
+        "source": "bundled"
+      },
+      ".claude/agents/visual-bounded-context-writer.md": {
+        "sha256": "e535a23884561176e0d1b54a90c680900a04c54c2d06030d00b03362f85044da",
+        "source": "bundled"
+      },
+      ".claude/agents/visual-c4-writer.md": {
+        "sha256": "ccfa078f827c97aa766e2a60336721ae0d81b144f5ba92d4faed769144eca226",
+        "source": "bundled"
+      },
+      ".claude/agents/visual-erd-writer.md": {
+        "sha256": "3ad1e1f0ae7cbd82015f2ae4c7cfcd0503ce8bc7e0579fe6721c455a6e5ff9c8",
+        "source": "bundled"
+      },
+      ".claude/agents/visual-heatmap-writer.md": {
+        "sha256": "c56cd8fde83d164f7a68bab825761217b1b0272532ee3789cd9d7e956f726c29",
+        "source": "bundled"
+      },
+      ".claude/agents/visual-risk-writer.md": {
+        "sha256": "31881ac059463728821854c39fe2b29bfaca7ca81b39bdce7788d7b8dec67ba6",
+        "source": "bundled"
+      },
+      ".claude/commands/0_business_scenario.md": {
+        "sha256": "4db554720720cbb15aade1768afe66909ce0f635dab3d0b1cb96418e1293ec15",
+        "source": "bundled"
+      },
+      ".claude/commands/0a_problem_validation.md": {
+        "sha256": "6c38c6d9e8207e72f3b34959b4e82d236dd2c50ea159d94c6b5c32aa11cdf022",
+        "source": "bundled"
+      },
+      ".claude/commands/1_gofer_research.md": {
+        "sha256": "ed007b3edec093c9bc2c1944a1ac48e81826847b1ac7a46b54ded355918b646f",
+        "source": "bundled"
+      },
+      ".claude/commands/10_gofer_cloud.md": {
+        "sha256": "b3a6bbc62afce33f1decf571ea39408934ec4b3842a4cad445ed5f67bc197015",
+        "source": "bundled"
+      },
+      ".claude/commands/2_gofer_specify.md": {
+        "sha256": "88554c2dd875f1f8f42caa9f3adafbdd256bd6ffec1cef1c3cb05085e7353880",
+        "source": "bundled"
+      },
+      ".claude/commands/3_gofer_plan.md": {
+        "sha256": "137d51faeaaca1353d8424511e023773922184abbe5035dfabdd6efbe4520d09",
+        "source": "bundled"
+      },
+      ".claude/commands/4_gofer_tasks.md": {
+        "sha256": "52cf4d71932362b38255f69db361f98256b85a918465b20514351aa8ab68b430",
+        "source": "bundled"
+      },
+      ".claude/commands/5_gofer_implement.md": {
+        "sha256": "d4f1f875ed47cb28c57a1f7ceb9117bd6532cd98d751ad47e97ffe3419ea43b0",
+        "source": "bundled"
+      },
+      ".claude/commands/6_gofer_validate.md": {
+        "sha256": "c64cf1834ae3dfb64554234a0dd504a1a4726a5b949b33d3007cb982d78e1194",
+        "source": "bundled"
+      },
+      ".claude/commands/7_gofer_save.md": {
+        "sha256": "afff3e060612a0cae73dbf8ac96b84f407f2cfadbe277bd9ca5cc12e93e58ac6",
+        "source": "bundled"
+      },
+      ".claude/commands/7a_stakeholder_comms.md": {
+        "sha256": "6b062bc6d34dc3376e60b23d65b6da808f68f6b53e6c06deffed8f42814d1a39",
+        "source": "bundled"
+      },
+      ".claude/commands/8_gofer_resume.md": {
+        "sha256": "cda6a84f67b63eb439224edc576dfa4a3a516df393e6558e180756a50b0425b8",
+        "source": "bundled"
+      },
+      ".claude/commands/9_gofer_tests.md": {
+        "sha256": "751da40a594c94bc7c35728e60703ee6dcd8542d82cdc3cfe06da6d82371e5d3",
+        "source": "bundled"
+      },
+      ".claude/commands/gofer_bootstrap_workspace.md": {
+        "sha256": "49ba02c80cf374af77f40e10fee49b4c71c389a2da01b402480b2e5e7b607b03",
+        "source": "bundled"
+      },
+      ".claude/commands/gofer_check_workspace.md": {
+        "sha256": "e0769c181e214c03c04ac738f5af89c1ee24addf0fe62abf1bd925c5ecd02e2b",
+        "source": "bundled"
+      },
+      ".claude/commands/gofer_constitution.md": {
+        "sha256": "c72bb3346247c1a7a4e8ae53fed239989dc2a5a9b90d4f87572f19fd38b2afd2",
+        "source": "bundled"
+      },
+      ".claude/commands/gofer_diagnose.md": {
+        "sha256": "0fdc81db3a88efdb76f67ef3503b0997f9de4a80645312ae3bb4e0915131e4fe",
+        "source": "bundled"
+      },
+      ".claude/commands/gofer_eai_first_run.md": {
+        "sha256": "4c73f86f503cebb075f953a237adba43b1e396e42dafe66cf2fb55f22c8de16c",
+        "source": "bundled"
+      },
+      ".claude/commands/gofer_hydrate.md": {
+        "sha256": "7716b0fac9a5035be79ebadbe5b172baed68171539e4baa8058a991dd287aa9c",
+        "source": "bundled"
+      },
+      ".claude/commands/gofer_personality.md": {
+        "sha256": "9682d1dad87ce55681faab6d25bfe5054aca398d6c19072b69899864b8e64da6",
+        "source": "bundled"
+      },
+      ".claude/commands/gofer_plan.md": {
+        "sha256": "6e87253512db890aa29e64a90de27ec518a8c7241f5ad102decd574853bad1aa",
+        "source": "bundled"
+      },
+      ".claude/commands/gofer_side.md": {
+        "sha256": "53475e2a7dd37e5f9b87161efc109d27ff2551610cc2f16e6f2dbeeb46f47ef1",
+        "source": "bundled"
+      },
+      ".claude/commands/gofer_spec_summary.md": {
+        "sha256": "f1e639afb57a390dcb9fcc1bef92c30b618675b1b73923bbc27e7f157277b7d5",
+        "source": "bundled"
+      },
+      ".claude/commands/gofer_tdd.md": {
+        "sha256": "9beff1eabd6b36d2bfa0038f9b00f7ff7ad5161c85f30940577ab84c39779e80",
+        "source": "bundled"
+      },
+      ".claude/commands/gofer_vocabulary.md": {
+        "sha256": "725fe1c57b42f936db3bf9503b79715e04cfdec52276bff497f8d5fa72806044",
+        "source": "bundled"
+      },
+      ".claude/commands/gofer_zoom_out.md": {
+        "sha256": "2b41a39a060725c31e4cae2b19d447ab65d19f5c0117b48a12da6d3b79c68d23",
+        "source": "bundled"
+      },
+      ".gemini/agents/assumption-tracker.md": {
+        "sha256": "eab73b9f2de91f001e3ea37361402124ebdb39e7f1ef9564f65b1daa97c07abf",
+        "source": "bundled"
+      },
+      ".gemini/agents/business-metrics-analyzer.md": {
+        "sha256": "6abcb001f9cd410422cae82d94766370da457a48409d2ac0e7c8d708a0d8a8fb",
+        "source": "bundled"
+      },
+      ".gemini/agents/business-problem-validator.md": {
+        "sha256": "e08ab7b54ecbd044fbdb65880ed93f111b24ed6d37eefdb3e3b121a99d335eca",
+        "source": "bundled"
+      },
+      ".gemini/agents/codebase-analyzer.md": {
+        "sha256": "a2929e33778f46d1cc2c07affa6ded7dbd3e18907844e21e057c71924857e682",
+        "source": "bundled"
+      },
+      ".gemini/agents/codebase-locator.md": {
+        "sha256": "1ce684227b3e6127355682765233690af7cbae0bbfb225a2e97f9562e25a7dea",
+        "source": "bundled"
+      },
+      ".gemini/agents/codebase-pattern-finder.md": {
+        "sha256": "77ed0fb2284a525ee5df7d97db4e7b104b223c0fd5555048d2de2698ecf34a2b",
+        "source": "bundled"
+      },
+      ".gemini/agents/comms-writer.md": {
+        "sha256": "095c03137ddd1581ecd5530ab1d9c5f6c0a42efc6a5487e9b5c509292abd2d9b",
+        "source": "bundled"
+      },
+      ".gemini/agents/engineer-review.md": {
+        "sha256": "a62f739a84dbf47d19503d5dfe968ef09948bf0806ffceeae36ca095a8fed7e6",
+        "source": "bundled"
+      },
+      ".gemini/agents/implement-bug-triangulator.md": {
+        "sha256": "ed839d7c1935b2ca06f2488e8144abfe23e72dbc21694f53801c650749985eaa",
+        "source": "bundled"
+      },
+      ".gemini/agents/implement-code-review-council.md": {
+        "sha256": "9019cc8c17eae5bc0c6445ecc02450533d4ed2dd9bce118b08dd64548faf13ed",
+        "source": "bundled"
+      },
+      ".gemini/agents/implement-doc-writer.md": {
+        "sha256": "9c28a5f6f3ba81c2b4272d2397a1411dd083061fc3761d0c3a703884a001c679",
+        "source": "bundled"
+      },
+      ".gemini/agents/implement-error-hardener.md": {
+        "sha256": "43e25e3aa26bba024b0648b7e42e968c97400a72fe7142a1079bd4395fa96e63",
+        "source": "bundled"
+      },
+      ".gemini/agents/implement-performance-explorer.md": {
+        "sha256": "3e40278a061628a2591b926aee21a6028f3ed67d5a05677507ea83187bfb2383",
+        "source": "bundled"
+      },
+      ".gemini/agents/implement-test-diversifier.md": {
+        "sha256": "dfc5c9aaefe65428e2aff9fdee74c600ae3da240d18d96ecca6adc6da8ae1e1e",
+        "source": "bundled"
+      },
+      ".gemini/agents/implement-variant-generator.md": {
+        "sha256": "e262d77566ddcdfa771d8cf8fdfc04907a8a36efae8cb4ba1fce00985e228031",
+        "source": "bundled"
+      },
+      ".gemini/agents/multi-perspective-judge.md": {
+        "sha256": "823f68abdf0ec6268523bab861057e87d5df765b0c1c60ecd59d7896d10a804d",
+        "source": "bundled"
+      },
+      ".gemini/agents/plan-api-comparator.md": {
+        "sha256": "94c8695bd87f96bc3d9b7ec16ce6b905f420de91c0cd23e5644fa42210a4b524",
+        "source": "bundled"
+      },
+      ".gemini/agents/plan-architecture-diverger.md": {
+        "sha256": "1afa6f3c3b74e13fd824601408cc4e5d3276b2a57eb84b53bb657a27cd1d6914",
+        "source": "bundled"
+      },
+      ".gemini/agents/plan-data-model-stress-tester.md": {
+        "sha256": "61b920f1ca82194b85a4665d34872bb2ef570581a9deeab2d1428e216921c18b",
+        "source": "bundled"
+      },
+      ".gemini/agents/plan-migration-path-finder.md": {
+        "sha256": "2fc89d6b062cb360288fab1dcf208d9f16893e2e464645b27055fdf1118f49e0",
+        "source": "bundled"
+      },
+      ".gemini/agents/plan-refactor-rewrite-advisor.md": {
+        "sha256": "076b479aa50b5bf3fe942aa63aa0525d2224de804babe7459016d663988d46d2",
+        "source": "bundled"
+      },
+      ".gemini/agents/research-dependency-evaluator.md": {
+        "sha256": "54f51ede336eef7ed1899a9ae96cf75d0722d727cd0eef4df9a1278a60deb877",
+        "source": "bundled"
+      },
+      ".gemini/agents/research-horizon-scanner.md": {
+        "sha256": "f59c1f54824b56b371107e2867c6ce91312ed46e35cc6ff38d3ff881567811f8",
+        "source": "bundled"
+      },
+      ".gemini/agents/research-market-scanner.md": {
+        "sha256": "2d9c4a7a8326c91a83b643725b17d2347203315cf241e8bcdae370fceb773a72",
+        "source": "bundled"
+      },
+      ".gemini/agents/research-perspective-multiplier.md": {
+        "sha256": "3cec71db3be8b84547420ae57f3ef529df12cf585935aa82d76a7087546c0735",
+        "source": "bundled"
+      },
+      ".gemini/agents/scope-creep-detector.md": {
+        "sha256": "db8a4cd6fd3b2e8de054a76b676ddfab584638ba68656f412356f0da0a3442cc",
+        "source": "bundled"
+      },
+      ".gemini/agents/specify-ambiguity-detector.md": {
+        "sha256": "a859019843134abe83ab516623920f6eb206b7aa449d839fa35277648abeda8f",
+        "source": "bundled"
+      },
+      ".gemini/agents/specify-journey-stress-tester.md": {
+        "sha256": "b9512c25df603abb02b51c4b4dd1252c4fbc879cffe69aaa5ab248bcd082ab75",
+        "source": "bundled"
+      },
+      ".gemini/agents/tasks-cross-cutting-scanner.md": {
+        "sha256": "a0de951b4aaf547c96941fe390f30f610dc2b82b0aa38280c057f08ca0aa23e5",
+        "source": "bundled"
+      },
+      ".gemini/agents/tasks-rollback-planner.md": {
+        "sha256": "e4b2d17f0b3dde585d23ac28d6cb2676ef4bcc49d919a490821d2bcc67f67e20",
+        "source": "bundled"
+      },
+      ".gemini/agents/validate-security-red-team.md": {
+        "sha256": "70427b13c4f7c24a24b8fc6a9a6294f7c7e2d7cefdbcde2629bd83dc872b3712",
+        "source": "bundled"
+      },
+      ".gemini/agents/validation-correctness.md": {
+        "sha256": "7531dbc58751a4a3d2424527774873350236e34e9a5ed05f68148444b1d88d82",
+        "source": "bundled"
+      },
+      ".gemini/agents/validation-integration.md": {
+        "sha256": "4c9604e73d56b3920486055f338fb2bf0e5b49c3b848e0dd16c03d8d00f0df46",
+        "source": "bundled"
+      },
+      ".gemini/agents/validation-performance.md": {
+        "sha256": "b77a21951b5025561b3d53d4483d52969f699c09181ef095a8af8dc9e2abe20b",
+        "source": "bundled"
+      },
+      ".gemini/agents/validation-security.md": {
+        "sha256": "f483251d8ed9d70fb42d6aa0ddc0095327e4399402cc7f77934d6e80e10f2deb",
+        "source": "bundled"
+      },
+      ".gemini/agents/validation-standards.md": {
+        "sha256": "5ddc6a19ccd898a63e0940545e1f97219da4e7d8388638d44401a83150bf72a2",
+        "source": "bundled"
+      },
+      ".gemini/agents/validation-test-quality.md": {
+        "sha256": "a031bef4c81dd26708a0aa12ebc4604b302dfeed343ed4653c975054435fd4e1",
+        "source": "bundled"
+      },
+      ".gemini/agents/visual-bounded-context-writer.md": {
+        "sha256": "c24ff086e6d8425be8f835b1e31673fb22c3221851b7459492a3e8e28f8a26e5",
+        "source": "bundled"
+      },
+      ".gemini/agents/visual-c4-writer.md": {
+        "sha256": "1c23e46a4831a859df79cfa84008c4bf7efdf24a98ce34183e084f890c4e0190",
+        "source": "bundled"
+      },
+      ".gemini/agents/visual-erd-writer.md": {
+        "sha256": "8e96fa844cd2704acfe4961abe9fc02f4e6a73a76482d62815ec7a4af8ec1e9e",
+        "source": "bundled"
+      },
+      ".gemini/agents/visual-heatmap-writer.md": {
+        "sha256": "ca86e8687e87fbfe68c32ba007c55045dae563ccdcbc57794edd0a84f6cb58c2",
+        "source": "bundled"
+      },
+      ".gemini/agents/visual-risk-writer.md": {
+        "sha256": "aa863482eab6dc408b7f19bdce13fb5aa3ecc7ce00a1299b4b95ac38110c83ad",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/.gitkeep": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/0_business_scenario.md": {
+        "sha256": "b9a97f7134f3f745f6f5b97f0fb8418ead1687b1454bf08654fdd0fd3727e35b",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/0_business_scenario.toml": {
+        "sha256": "eef8e56ce728141ad0d1a089c92afb050bb64ed8a07a6956f92a50f1feaff813",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/0a_problem_validation.md": {
+        "sha256": "657e304ada287c2af7a490f4c8cb2a8ed9fa2c4e2b21e913bd01292e28baefe0",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/0a_problem_validation.toml": {
+        "sha256": "a8af3c971a9f9ef6b25cd3e6cdfda41f38b91dad45c93d8331d352da09ecf6d4",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/1_gofer_research.md": {
+        "sha256": "2d078c773c9788e6d83005bc89536d9cff48680bd69621dbaa7ccdd9d264bf95",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/1_gofer_research.toml": {
+        "sha256": "a8de4775d1bc8294287e8aedc268e2c13757243a6217e5dd23a01fda771306a1",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/10_gofer_cloud.md": {
+        "sha256": "beba5ffe5d1ab4da82d4cca4d108ac67d22230b82b4377e2d392adef3226ad77",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/10_gofer_cloud.toml": {
+        "sha256": "86e66b879081490fdbe06659ea55181ff79d79f6a5fb8d5375edeb9596bca763",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/2_gofer_specify.md": {
+        "sha256": "03a2827f727c87368d82bf1e41c4bb94ee34b148bd52ecab12e62aa8f4433a33",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/2_gofer_specify.toml": {
+        "sha256": "cb40454a634d9f6c254c9035036dcdded9e04220f9ad13757d8a5d45d7c0a107",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/3_gofer_plan.md": {
+        "sha256": "8bf684609c37fc24fcf7e973a58b7900ee60517a0f5395226f7ba47cee319ccc",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/3_gofer_plan.toml": {
+        "sha256": "bd0ee2195de52a70486e5c4688c11d0610d269e03de11e821b3962223e7bcea0",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/4_gofer_tasks.md": {
+        "sha256": "6e81dd8b2b13fba892ae2305d634b06d71f8f2956b158632d2941473a2461615",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/4_gofer_tasks.toml": {
+        "sha256": "ac92433b3db1cd08270750649f9b2dfe370238da950e2ef3004efac1edac322a",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/5_gofer_implement.md": {
+        "sha256": "3b34d175af1b53d3f142860261a8c2b1327a261c328100571202f4d7b92d7d7b",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/5_gofer_implement.toml": {
+        "sha256": "40e061625989bbb2f681ed74e82f7d60983d8d8599fa2ca551525349267ef592",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/6_gofer_validate.md": {
+        "sha256": "3c5897db228a724ec119165eca8b6a6d18b7e0bcc03066ee349baf9e88532a95",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/6_gofer_validate.toml": {
+        "sha256": "fb6f9005980f5305aab1e060c3629e335a5720a49cc56c96cff58050c1b02b7c",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/7_gofer_save.md": {
+        "sha256": "f088941974545cf7d3227118888065afcac67ac4a746aa1db0e4b2bd930b88a6",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/7_gofer_save.toml": {
+        "sha256": "eaa63c9ca6dc23f8343b98f175a61f7c966e296feb4bc474d4e1c79babd7dca7",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/7a_stakeholder_comms.md": {
+        "sha256": "3706cdba3a4ae504575ea8a9d2163effb7d0091fe172c3d793cc0dc1822a9cb3",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/7a_stakeholder_comms.toml": {
+        "sha256": "c45e5d7c0bfd7b8afbbf7bdfacdc7945fbfbae71bdc2d591f6a3fd344ec48557",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/8_gofer_resume.md": {
+        "sha256": "e6bd0cff1e20388d62f79219f9fb67d5137e2d4890d16dda2970f101af36eeca",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/8_gofer_resume.toml": {
+        "sha256": "608dc2f37ee3fe8954299cec2bfa03e1ce3a997b09b7b449c53938016124846b",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/9_gofer_tests.md": {
+        "sha256": "ef57a78e57d4a158c6081e16101207948b025d5e75ad5b7216a0297244698686",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/9_gofer_tests.toml": {
+        "sha256": "c123de3ce3927dd1b348ea096eabd4a9688b262a88dea6705e5964de1a9edc66",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/gofer_bootstrap_workspace.md": {
+        "sha256": "49ba02c80cf374af77f40e10fee49b4c71c389a2da01b402480b2e5e7b607b03",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/gofer_bootstrap_workspace.toml": {
+        "sha256": "0deb45e63c212d3b22121441b0b530516b5ae74ea65c33f467794e6a44aef50d",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/gofer_check_workspace.md": {
+        "sha256": "e0769c181e214c03c04ac738f5af89c1ee24addf0fe62abf1bd925c5ecd02e2b",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/gofer_check_workspace.toml": {
+        "sha256": "09076e76e3191ecc16ee4934b7465bedaf335bdbcfe0732c112c2d705a234284",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/gofer_constitution.md": {
+        "sha256": "fde244cd4462bf46d34934de6eb051b9d5b6be1f36753ec3ff83897032f1d128",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/gofer_constitution.toml": {
+        "sha256": "d16260ccd7c5ea21a240042d88c9dabcfe4b242ae90112ece1afc99a8cf2f4ad",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/gofer_diagnose.md": {
+        "sha256": "5ccaaf52f64b59fe5ea389e6fa9f8e4803bf3ec1e3152f6205ebfd2b0c9fced5",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/gofer_diagnose.toml": {
+        "sha256": "68f7b2383cf2faf9437dac87d1a2d825bbaf1480b3736a12fa15aa74b4c793d0",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/gofer_eai_first_run.md": {
+        "sha256": "4c73f86f503cebb075f953a237adba43b1e396e42dafe66cf2fb55f22c8de16c",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/gofer_eai_first_run.toml": {
+        "sha256": "78889ef6b8da852fbc517203b81f31b18aeddc82fdb6fdcd03ba864aebf9551e",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/gofer_hydrate.md": {
+        "sha256": "19af65a9d671171b815c0a30b3c91d854f6698f0108004886686eff356608d76",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/gofer_hydrate.toml": {
+        "sha256": "982af96e169d774feab3bf51d4b65f39e213b28307ba71a1db28e8dc8e5ac82a",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/gofer_personality.md": {
+        "sha256": "9682d1dad87ce55681faab6d25bfe5054aca398d6c19072b69899864b8e64da6",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/gofer_personality.toml": {
+        "sha256": "b9f980166453e4acbb3aadb790a3d987d4546175f454c836363f829f9724f067",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/gofer_plan.md": {
+        "sha256": "6e87253512db890aa29e64a90de27ec518a8c7241f5ad102decd574853bad1aa",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/gofer_plan.toml": {
+        "sha256": "f9206da2332f30c0704c4c517a129214e435d4294b3982c9fe4033600e975878",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/gofer_side.md": {
+        "sha256": "53475e2a7dd37e5f9b87161efc109d27ff2551610cc2f16e6f2dbeeb46f47ef1",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/gofer_side.toml": {
+        "sha256": "a5a5432707a397f0e5e432211d18195c4b380fce4429eeb6ad61cbe3361ce7b3",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/gofer_spec_summary.md": {
+        "sha256": "954289189cf9e4efa700db855959c5d6becf846c5cdf7df7d51f6a9bb4ad6576",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/gofer_spec_summary.toml": {
+        "sha256": "ae4bca88092e90a18cb3d87faa515dd9f49c5a965368f6f068954298eb87b741",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/gofer_tdd.md": {
+        "sha256": "360a9b205bed5c47bc2b0699312f7859dab9f638a65be8f1b9c6c23c6ec68d6f",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/gofer_tdd.toml": {
+        "sha256": "629dd111f24fa9ec8ed7c3cb8bc3f4ba3275e9ee5d853f85b809a8f971e6d504",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/gofer_vocabulary.md": {
+        "sha256": "84c70e0e86b94abd983c9b672216c827d0ddeed38586efb2a61073281817cd63",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/gofer_vocabulary.toml": {
+        "sha256": "85cc5e0db9e4fede6281b8a4a564842a2f29ddc1d2bf26aeb8f9a4078b194a72",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/gofer_zoom_out.md": {
+        "sha256": "3945438b5fd9e3fb9ed4db913ee0c393a190586a24abda826396577dc3effb8b",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/gofer_zoom_out.toml": {
+        "sha256": "f376cf6ece033613e9232509fc5c01a689aa5314029c50da25eff6b990829122",
+        "source": "bundled"
+      },
+      ".gemini/commands/gofer/manifest.json": {
+        "sha256": "1ac46177bb5a43e7742aa8a5e24628c833d5e32c7e626e10588a9732c3cdec78",
+        "source": "bundled"
+      },
+      ".gemini/extension.json": {
+        "sha256": "873fdf18d3469636522fae761da6f7b0a3aa50ababa59d0cb14853c08ed4bd70",
+        "source": "bundled"
+      },
+      ".github/copilot-instructions.md": {
+        "sha256": "75ae1d4efc8df1b894ef82bb8a39bb0f4d2b8a202b77c2f28b328845a8a1d0f3",
+        "source": "generated"
+      },
+      ".github/instructions/gofer-cost.instructions.md": {
+        "sha256": "0af9c5bbc0bec915171cdda1c27147fcd834f7c988812fc2fdb45810d0c86184",
+        "source": "bundled"
+      },
+      ".github/instructions/language-server.instructions.md": {
+        "sha256": "2a378b60f4b458bd69cf6f641ab9c6741fa9cb271bb04c6b8f9edca347a069e7",
+        "source": "bundled"
+      },
+      ".github/instructions/typescript.instructions.md": {
+        "sha256": "4b475fb41db64970a38bb620fc2ac6114a73c25a465cc2812c3bb833d22fe301",
+        "source": "bundled"
+      },
+      ".github/instructions/vscode-extension.instructions.md": {
+        "sha256": "ae5f165dc951d76cc29d86ac02f71586729421584868591ab6cd2da2f8e7166e",
+        "source": "bundled"
+      },
+      ".github/prompts/0_business_scenario.prompt.md": {
+        "sha256": "2d5dd7d1ae39fe366bea94e6d5ed632e2a8177c2fee271f30790bea7da84631f",
+        "source": "bundled"
+      },
+      ".github/prompts/0a_problem_validation.prompt.md": {
+        "sha256": "1780abbe4ce8ff23c022b48e3be598da6a854a423ec81174d6975a420b9abdcc",
+        "source": "bundled"
+      },
+      ".github/prompts/1_gofer_research.prompt.md": {
+        "sha256": "05d3ce74943dc0746dbaa7548a76cbb1d83aa4102f295f4e125d727418d96413",
+        "source": "bundled"
+      },
+      ".github/prompts/10_gofer_cloud.prompt.md": {
+        "sha256": "964854c505325637ca715c980facec068c0c94e3495cff400bc14ee6c7c4aacf",
+        "source": "bundled"
+      },
+      ".github/prompts/2_gofer_specify.prompt.md": {
+        "sha256": "34999a8589c8a07b92a5a9553b0c8f12292b045a63428f09fd8eaf4f1636f54c",
+        "source": "bundled"
+      },
+      ".github/prompts/3_gofer_plan.prompt.md": {
+        "sha256": "8d05cd1eac6673139da2f9b702057436b9cf1e2de0582a94fc1dd24f8f810a4b",
+        "source": "bundled"
+      },
+      ".github/prompts/4_gofer_tasks.prompt.md": {
+        "sha256": "f3fea7b33f651abca8376d520ac97174446f52a890e0e0490cfa6a78357b3b05",
+        "source": "bundled"
+      },
+      ".github/prompts/5_gofer_implement.prompt.md": {
+        "sha256": "d76876b03e8cd9865830e63ba35ce84c8b7cca49fbfb8de7fa4e78e35d4d0258",
+        "source": "bundled"
+      },
+      ".github/prompts/6_gofer_validate.prompt.md": {
+        "sha256": "c5536e03d006f06b76e3dd12d09ebd11f1288656ae4b29c541bb2456711a9a64",
+        "source": "bundled"
+      },
+      ".github/prompts/7_gofer_save.prompt.md": {
+        "sha256": "3fc6cb42a47970652d397ea1847f71ccad3fec5da424697ad48c47011add1ebe",
+        "source": "bundled"
+      },
+      ".github/prompts/7a_stakeholder_comms.prompt.md": {
+        "sha256": "844691152fa160debb6a8a76e0431a6483d14549c222b174e3a31769203e3f4e",
+        "source": "bundled"
+      },
+      ".github/prompts/8_gofer_resume.prompt.md": {
+        "sha256": "03c005bc5e7a8f386102cabc30989fbaa830a7954ee06e7c133f8b1f53dac84f",
+        "source": "bundled"
+      },
+      ".github/prompts/9_gofer_tests.prompt.md": {
+        "sha256": "f39ecfcf543bd81808f1d9646ac67832afc8b596da8a9bc407ac960b6c7906f9",
+        "source": "bundled"
+      },
+      ".github/prompts/gofer_bootstrap_workspace.prompt.md": {
+        "sha256": "638113a441864f41cd3b276f12847daf45f5a833b694e45966f6a21cce3429f5",
+        "source": "bundled"
+      },
+      ".github/prompts/gofer_check_workspace.prompt.md": {
+        "sha256": "4f6b153259abf1fb244576b8e5a178c982a60da70a12140bdbbba8f236a3d69a",
+        "source": "bundled"
+      },
+      ".github/prompts/gofer_constitution.prompt.md": {
+        "sha256": "b083c7b284b051c0403194123922bc2b84548749c9262da836cdc391057d2f77",
+        "source": "bundled"
+      },
+      ".github/prompts/gofer_diagnose.prompt.md": {
+        "sha256": "6ef3a7d9ca828dd5b238e4b9d1707531c869db89c963bdc54ea96f2ca8323b0e",
+        "source": "bundled"
+      },
+      ".github/prompts/gofer_eai_first_run.prompt.md": {
+        "sha256": "ac0786519b2b1d865a5432e0c1527f59e6dc6107e007e1a644f759ce84a2c380",
+        "source": "bundled"
+      },
+      ".github/prompts/gofer_hydrate.prompt.md": {
+        "sha256": "fdd83be688b0071c2e94dbf455a841f8bd6d64305cb36fd9d42a14d6906f52d6",
+        "source": "bundled"
+      },
+      ".github/prompts/gofer_personality.prompt.md": {
+        "sha256": "66e64c54f088ec36df749cc8a4878a34026710aa4fc3640d2ffe71436c2e83bd",
+        "source": "bundled"
+      },
+      ".github/prompts/gofer_plan.prompt.md": {
+        "sha256": "82dd7149c2977cf8bf5c7a45501e243bff3cadc672990ef1fe81bf76eb43aecf",
+        "source": "bundled"
+      },
+      ".github/prompts/gofer_side.prompt.md": {
+        "sha256": "5cb70757b49f8d21f42936c5f480307c1f65b680eba15e31b9be46fe82603f77",
+        "source": "bundled"
+      },
+      ".github/prompts/gofer_spec_summary.prompt.md": {
+        "sha256": "b2a5a915048fcf51486c2ed585f2ae2c72ce5b1f19194c4c47b95dbdf60080e3",
+        "source": "bundled"
+      },
+      ".github/prompts/gofer_tdd.prompt.md": {
+        "sha256": "abb6c4dfb234ac194d9cc3b10212e7cb077b62550800474cd85daa88f80d434c",
+        "source": "bundled"
+      },
+      ".github/prompts/gofer_vocabulary.prompt.md": {
+        "sha256": "7d592bd95ec0515a5710edc1d643165ef7dc2abd976044dabb9069697f253da3",
+        "source": "bundled"
+      },
+      ".github/prompts/gofer_zoom_out.prompt.md": {
+        "sha256": "22f1c7938836acf77dd88ef3beeca07acd52765e3467b0f13030e26b80b71e73",
+        "source": "bundled"
+      },
+      ".github/skills/0-business-scenario/SKILL.md": {
+        "sha256": "4bd1df3a554e2a8424fa652dd14a5a83971840347c02613ca541316c225bc97c",
+        "source": "generated"
+      },
+      ".github/skills/0a-problem-validation/SKILL.md": {
+        "sha256": "bdd640feaf6e1591eda30f2127f395c22e1d89c34051097d2e48d818090f6bd2",
+        "source": "generated"
+      },
+      ".github/skills/1-gofer-research/SKILL.md": {
+        "sha256": "8b2b52badd92f7e3a4f0411b0ad345547f838534e2b7f399ebe0fd60307fdc1f",
+        "source": "generated"
+      },
+      ".github/skills/10-gofer-cloud/SKILL.md": {
+        "sha256": "fa0e00c83239860b9098713e5f6a359e75eca0bbda48465dc422a65c61284124",
+        "source": "generated"
+      },
+      ".github/skills/2-gofer-specify/SKILL.md": {
+        "sha256": "c2805d75069ba1aac4c85517e80dc3a4665082f23359b54de979a4c7ad2190e2",
+        "source": "generated"
+      },
+      ".github/skills/3-gofer-plan/SKILL.md": {
+        "sha256": "d3c03cc5762a2c8f9eb15b23b06bf57c1c58a852eb52f93afdccd3770753b620",
+        "source": "generated"
+      },
+      ".github/skills/4-gofer-tasks/SKILL.md": {
+        "sha256": "7a009394681d03035789b1d1713d1de2a29c6c9a0f25f1f5f215de82f41b29b1",
+        "source": "generated"
+      },
+      ".github/skills/5-gofer-implement/SKILL.md": {
+        "sha256": "991df6eba9e7f95fc585d57de39652e8a68e071a34431d82f95062a70a5d4e94",
+        "source": "generated"
+      },
+      ".github/skills/6-gofer-validate/SKILL.md": {
+        "sha256": "f9ee021d42ee2c3ccbf9915f6cf3d21fcd052b47cfb75afc3096c8bd0c3acd54",
+        "source": "generated"
+      },
+      ".github/skills/7-gofer-save/SKILL.md": {
+        "sha256": "e74cd801990c36eaa819433186d96279c72bad40a58cb4f17882361ac663acdd",
+        "source": "generated"
+      },
+      ".github/skills/7a-stakeholder-comms/SKILL.md": {
+        "sha256": "934d03d9d29f6250f8c6287cfde6b299d5f9fce0bedd3b53d767364b66ebec62",
+        "source": "generated"
+      },
+      ".github/skills/8-gofer-resume/SKILL.md": {
+        "sha256": "98470e7de9646ff5c163603d2cde804d5e82440b1fcc7b50ccc9ef26cb5bfa35",
+        "source": "generated"
+      },
+      ".github/skills/9-gofer-tests/SKILL.md": {
+        "sha256": "58537e34f18d761d7ec0ae8d02fa1cd479f4d88efc60f669ffa8d35a0ac9fa20",
+        "source": "generated"
+      },
+      ".github/skills/gofer-bootstrap-workspace/SKILL.md": {
+        "sha256": "a70cd4ad0f12fb0e4334a7aed6ba370f56629a03fae22df098ad30c8ec9e70bf",
+        "source": "generated"
+      },
+      ".github/skills/gofer-check-workspace/SKILL.md": {
+        "sha256": "7dbbe93242522967a62615f45bbd070cbfe9cda599d28cd333c68a47ae0358e1",
+        "source": "generated"
+      },
+      ".github/skills/gofer-constitution/SKILL.md": {
+        "sha256": "bc01d52d34ccb8273a0977f4cc98cab5450b55212bd4a5eb463cfeeb94d170b8",
+        "source": "generated"
+      },
+      ".github/skills/gofer-diagnose/SKILL.md": {
+        "sha256": "5cd0b4bd172856f291a8e152ccfbe46ce4b4f7e1781da023a3d7d28a98114e1a",
+        "source": "generated"
+      },
+      ".github/skills/gofer-eai-first-run/SKILL.md": {
+        "sha256": "0b58b2efeeb974c9e5676d690ded1031ff569412ecf5db5f893e71841c21f304",
+        "source": "generated"
+      },
+      ".github/skills/gofer-hydrate/SKILL.md": {
+        "sha256": "33c0266854175a862a23977f294bf6f4cfc76a44fdd259588c4e5206c35a81ad",
+        "source": "generated"
+      },
+      ".github/skills/gofer-personality/SKILL.md": {
+        "sha256": "8c24644dde0849a3c12bb093c9231f421088c952bcd9174c98c52f385f735157",
+        "source": "generated"
+      },
+      ".github/skills/gofer-plan/SKILL.md": {
+        "sha256": "f37d4ba44d638f8ad42b742e6c57591277387f98cc5277c59eef5f91a4a98fd7",
+        "source": "generated"
+      },
+      ".github/skills/gofer-side/SKILL.md": {
+        "sha256": "a999f0b1ca5f797f70ae275d6ffd465611792ebf578181fdfd869efcd156f89f",
+        "source": "generated"
+      },
+      ".github/skills/gofer-spec-summary/SKILL.md": {
+        "sha256": "4d428501d803767aad82feb695f9c2f2ae2d9f59d9cd324087354b11b11646d9",
+        "source": "generated"
+      },
+      ".github/skills/gofer-tdd/SKILL.md": {
+        "sha256": "1e117f53df6508e305d8de60f972f884b6b4e564b24c565aec7c56fd74c9b54b",
+        "source": "generated"
+      },
+      ".github/skills/gofer-vocabulary/SKILL.md": {
+        "sha256": "4035e1ffbd060f018371ea6810ede2c4c24e9e871e5682186de3e6c3d5a3c0ab",
+        "source": "generated"
+      },
+      ".github/skills/gofer-zoom-out/SKILL.md": {
+        "sha256": "cf60ccb3bad32ef51ead182546ff2f3b0441fe3ec1815e3cb734248698a9d100",
+        "source": "generated"
+      },
+      ".specify/commands/.gitkeep": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "source": "bundled"
+      },
+      ".specify/commands/0_business_scenario.md": {
+        "sha256": "8695c338c163b047c45f1e6369df9748e523230f4812a81da74c94867264d72a",
+        "source": "bundled"
+      },
+      ".specify/commands/0a_problem_validation.md": {
+        "sha256": "099fb9eccea6e4150db7fae4ba7e9ce243dcb23882902730f05f611a046bf74d",
+        "source": "bundled"
+      },
+      ".specify/commands/1_gofer_research.md": {
+        "sha256": "ab8bdb9fab94f719de3103fc3b3d0331f1f8f2dec0fa55264007a1301655b7d8",
+        "source": "bundled"
+      },
+      ".specify/commands/10_gofer_cloud.md": {
+        "sha256": "cb51dc5fd543bca0e115dc36ef39657483a1d3ff094bae5204b6b7ae550bdc80",
+        "source": "bundled"
+      },
+      ".specify/commands/2_gofer_specify.md": {
+        "sha256": "ce76fe02e94d65fadd662a54062ac65b418432834e2eecbd9453965c96e6eb68",
+        "source": "bundled"
+      },
+      ".specify/commands/3_gofer_plan.md": {
+        "sha256": "c59d4730b783c021e107ee6d1cd611f6020a020fd24f1b3015cff38acee5c37a",
+        "source": "bundled"
+      },
+      ".specify/commands/4_gofer_tasks.md": {
+        "sha256": "40b7a1f4825e717cc02a03e552aad6c5a0ed74553d4008b393d2ecc83f87027c",
+        "source": "bundled"
+      },
+      ".specify/commands/5_gofer_implement.md": {
+        "sha256": "0aafd7ffdfe078bf21b35c47a868dcd3000ec36f2376c9625ab429fe56047b99",
+        "source": "bundled"
+      },
+      ".specify/commands/6_gofer_validate.md": {
+        "sha256": "cc5391e58a709abf558891820a037b62a709f9f8e13d3a6863acfcb8f0c4d2c0",
+        "source": "bundled"
+      },
+      ".specify/commands/7_gofer_save.md": {
+        "sha256": "43449e82671b3ddacf5faba6f29c3d9e24e008d83d3302424d58f63d8db86586",
+        "source": "bundled"
+      },
+      ".specify/commands/7a_stakeholder_comms.md": {
+        "sha256": "07fcf4338b333b8fc517f1c87831ef79fb43bd8d29be644a336d41b44dd21a88",
+        "source": "bundled"
+      },
+      ".specify/commands/8_gofer_resume.md": {
+        "sha256": "d4ea4e6cf17caba755b19a95582238c098ad4f001374987fa10a31e34c2f38be",
+        "source": "bundled"
+      },
+      ".specify/commands/9_gofer_tests.md": {
+        "sha256": "eb65b05a933aa268cd64b98c236ede7b4a4d159e38820f8e69d1a598a5734932",
+        "source": "bundled"
+      },
+      ".specify/commands/gofer_bootstrap_workspace.md": {
+        "sha256": "97379532b74ca6e75d98612b45f4c6a84d1d060310069a5d76d5b2a117e4a017",
+        "source": "bundled"
+      },
+      ".specify/commands/gofer_check_workspace.md": {
+        "sha256": "da0b98af6b631ce374295d2a5464349c7a71a42068d262a12ada774adecc60d2",
+        "source": "bundled"
+      },
+      ".specify/commands/gofer_constitution.md": {
+        "sha256": "3046b92d99bf296382f01b229d60c7ee00e76e4850a9a2764b5a9272e7b50263",
+        "source": "bundled"
+      },
+      ".specify/commands/gofer_diagnose.md": {
+        "sha256": "0e975d50895f77befef8bfd98ba6bbf9fd2b2f19886d6a796f198b7741119d29",
+        "source": "bundled"
+      },
+      ".specify/commands/gofer_eai_first_run.md": {
+        "sha256": "64c7a120cd20e707616544bc3c171f5106cb202e69832e75389268a540c37985",
+        "source": "bundled"
+      },
+      ".specify/commands/gofer_hydrate.md": {
+        "sha256": "7fb9fd077b37f01455d5795ae72f830efa76a2c6e14bc9741e15a8eb7cf610c8",
+        "source": "bundled"
+      },
+      ".specify/commands/gofer_personality.md": {
+        "sha256": "4bf3f8739630fd1fcfc00a78f057a34f1319626712c171c7fbf688ffcc0b466e",
+        "source": "bundled"
+      },
+      ".specify/commands/gofer_plan.md": {
+        "sha256": "24e2fc51fce784190d5c3f482d4829c3eb7fcc0516690aa975684e64764a672a",
+        "source": "bundled"
+      },
+      ".specify/commands/gofer_side.md": {
+        "sha256": "5e15337046a289f7897773ee5cb97bbb4926944167dfbd86d3483dd8b7326beb",
+        "source": "bundled"
+      },
+      ".specify/commands/gofer_spec_summary.md": {
+        "sha256": "141a3d738689bbda1f24791821cd5d9aefddbf9ac09800a8c882a00d6e2ace10",
+        "source": "bundled"
+      },
+      ".specify/commands/gofer_tdd.md": {
+        "sha256": "f88952d1f45cc337854ed0d6f6b7b9fbace14ae58519e01715b7f1084d2af4d8",
+        "source": "bundled"
+      },
+      ".specify/commands/gofer_vocabulary.md": {
+        "sha256": "1ade2f486469037c09efe6e9dd1db56884a82ee6e12e30c4958f54720bdcfbcb",
+        "source": "bundled"
+      },
+      ".specify/commands/gofer_zoom_out.md": {
+        "sha256": "d31e15d40caec46fcce44a6fab6a15e8b3cead12a8c516e339d61f344b7c91ca",
+        "source": "bundled"
+      },
+      ".specify/README.md": {
+        "sha256": "85be49b67ea729d88ce9166318de7a559792f0f5ae5d8c0043117ad71a54df46",
+        "source": "generated"
+      },
+      ".specify/references/platform/deployment-repo.md": {
+        "sha256": "af1107251740d6b9f2dacc9e04a5cb33b9836e96bbd12a56e80fd12afc677c5f",
+        "source": "bundled"
+      },
+      ".specify/references/platform/eai-app-template.md": {
+        "sha256": "c68be6a9185efd7d4ba93bbe6502ee6603af8e1e261ba6a26ae2ec8a81d5b9c1",
+        "source": "bundled"
+      },
+      ".specify/references/platform/eai-config-driven-ui.md": {
+        "sha256": "d936f1a98a01b82c430a06c16dae633cc486ca4d839042512ebe4978d2d12456",
+        "source": "bundled"
+      },
+      ".specify/references/platform/eai-service-patterns.md": {
+        "sha256": "5f0b21dc5aafc0b654ae12e82ca5d91e45ea300103b1823b658c34030f2e9f51",
+        "source": "bundled"
+      },
+      ".specify/references/platform/eai.md": {
+        "sha256": "b2894300fbfa4e7a91c57069b97631d2abb36be1449891fa7c8326e82bcdc348",
+        "source": "bundled"
+      },
+      ".specify/references/platform/README.md": {
+        "sha256": "0dcc821839088282601ab378391972eedab97da957324c38f7f8da6bd5a7540e",
+        "source": "bundled"
+      },
+      ".specify/scripts/bash/check-context-health.sh": {
+        "sha256": "022bd7b5c8ba7f2fe17b50a3f71dd79d6e21d8e7a794eff24019e826cecabed5",
+        "source": "bundled"
+      },
+      ".specify/scripts/bash/check-persona-pack.sh": {
+        "sha256": "e149f00952006d134c17e614a932821b2df481d5649828a5b71da0bce422756c",
+        "source": "bundled"
+      },
+      ".specify/scripts/bash/check-prerequisites.sh": {
+        "sha256": "d814a3c6bde2a86eaab0757927ff11d7d4d965c21e2a3782fe917f14485c1a34",
+        "source": "bundled"
+      },
+      ".specify/scripts/bash/common.sh": {
+        "sha256": "1e5a3771fa5bb81d82194c700ad876039592211805c3117b0b8f3e98711e260c",
+        "source": "bundled"
+      },
+      ".specify/scripts/bash/create-new-feature.sh": {
+        "sha256": "ab6eaa8d4f6ab74dd46ddb7f783084cb0ea71a9bdf858d5cade5f7e13a5f3570",
+        "source": "bundled"
+      },
+      ".specify/scripts/bash/install-optional-tools.sh": {
+        "sha256": "8beda5869abdad7d9cbd621bac4430904a5c3881c8c4efede3af543c4dc3d194",
+        "source": "bundled"
+      },
+      ".specify/scripts/bash/log-stage.sh": {
+        "sha256": "12bfaef7bd3c9eb46a10763fde5cde9999e4e635c003a4ca79cd02224719c302",
+        "source": "bundled"
+      },
+      ".specify/scripts/bash/mark-task-complete.sh": {
+        "sha256": "22e83aec457d0502bf4903199a979140eaa71a4a7d66168225d81d49c4f8e18e",
+        "source": "bundled"
+      },
+      ".specify/scripts/bash/pipeline-state.sh": {
+        "sha256": "95503a13ff53fba1c4ca8027e3732f5e2a830dcddef1e4bef4a2918af41011ca",
+        "source": "bundled"
+      },
+      ".specify/scripts/bash/read-failed-approaches.sh": {
+        "sha256": "521e9df3a34bad877ecb651441b7b510e1b45af3fbd4c17fa80191538e610991",
+        "source": "bundled"
+      },
+      ".specify/scripts/bash/read-session-memories.sh": {
+        "sha256": "57ec39bc2813c0b69d2c8f8120b52becffc729c4bddd2f031d1ab3d95c49ab68",
+        "source": "bundled"
+      },
+      ".specify/scripts/bash/save-checkpoint.sh": {
+        "sha256": "4863b3c462be4a12db2fb1d80367850954acf9173ea58c8f54232e00342c4cf6",
+        "source": "bundled"
+      },
+      ".specify/scripts/bash/setup-plan.sh": {
+        "sha256": "48a1285e616f94f2a706bff036682c7f4e88b7d3e9cd6ea54a6313246ecb076d",
+        "source": "bundled"
+      },
+      ".specify/scripts/bash/sync-implementation-status.sh": {
+        "sha256": "308f2613daf8654f37c5ce83e55c972603414959c8259e7943eb573d1da8398e",
+        "source": "bundled"
+      },
+      ".specify/scripts/bash/update-agent-context.sh": {
+        "sha256": "924517ff340d757af9d7dcb5203dccf8138fe46c6a6f0c555e5f98a1d8330693",
+        "source": "bundled"
+      },
+      ".specify/scripts/bash/validate-artifact.sh": {
+        "sha256": "ec1a112280b98881f6f4997ec8ae44a7880f4d5bb2969bc9db3b35152cdfac90",
+        "source": "bundled"
+      },
+      ".specify/scripts/bash/verify-task.sh": {
+        "sha256": "853eb8eb6fc1d0bb985430e5551ef15cc2d0a8fd7df604693570aaab62baebe6",
+        "source": "bundled"
+      },
+      ".specify/scripts/bash/write-failed-approach.sh": {
+        "sha256": "e4ede2625dd28a3ba160938a38292e231298f4f6fb67d59d8734adef290905f6",
+        "source": "bundled"
+      },
+      ".specify/scripts/bash/write-periodic-checkpoint.sh": {
+        "sha256": "c55a5d297cabeea331d30273fc975600547759c8966f974c04b6b68785e81ead",
+        "source": "bundled"
+      },
+      ".specify/scripts/bash/write-session-memory.sh": {
+        "sha256": "577df2dc0e888d8a59ef2c93caec6efa3db202537fcdada330aebb47347ab0f5",
+        "source": "bundled"
+      },
+      ".specify/scripts/hooks/agent-stop.mjs": {
+        "sha256": "e57f6e3cef8ffe6c8b13ca7478d7cfab5ee24cf07b0af67a8f3c1cb8963731d8",
+        "source": "bundled"
+      },
+      ".specify/scripts/hooks/log-stage-launch-time.mjs": {
+        "sha256": "fa73629ab9e5a28ec317b5b21d5cd9c27f643812f19298690bc1031837a529d6",
+        "source": "bundled"
+      },
+      ".specify/scripts/hooks/post-tool-use.mjs": {
+        "sha256": "a3e0f7c26f079558176f699e367a8f30a13c25bab1be4d01a13d29dee64ba3c4",
+        "source": "bundled"
+      },
+      ".specify/scripts/hooks/queued-input.mjs": {
+        "sha256": "7b37a7dd1d538313ee00184acb19d766a6dbd03f574cf0e8c86b95180cf86253",
+        "source": "bundled"
+      },
+      ".specify/scripts/hooks/session-lifecycle.mjs": {
+        "sha256": "6c117df97bc2cdc8ed0e5f83f9f85b08da157782a9817a3a373e42b651849ad2",
+        "source": "bundled"
+      },
+      ".specify/scripts/hooks/user-prompt-submit.mjs": {
+        "sha256": "476523fae72cb9564d8ff3f248aacc13c04421b5c05d1f12e8aeb89c073d0823",
+        "source": "bundled"
+      },
+      ".specify/scripts/node/canonical-descriptions.mjs": {
+        "sha256": "1ef61eaef460a75ddd1f31330418749c6354c90973b5b9c165c251d66a9f8bfb",
+        "source": "bundled"
+      },
+      ".specify/scripts/node/check-version-alignment.mjs": {
+        "sha256": "470a7e4620916494049b7a387fc59d97e72b97a103f087c87e7dabf037f708f3",
+        "source": "bundled"
+      },
+      ".specify/scripts/node/codex-doctor.mjs": {
+        "sha256": "fa7c69de3041a6d727c4eeb65eb7846dafbaa0a7aa62d34a44430083bdac7b49",
+        "source": "bundled"
+      },
+      ".specify/scripts/node/generate-commands.mjs": {
+        "sha256": "bd6d6375daef449a5549b6a3726da59573f463bd5b09f6a55f2dca565a6b767a",
+        "source": "bundled"
+      },
+      ".specify/scripts/node/generate-issues.js": {
+        "sha256": "aaf50e1f192167142d55230f56f6766c791a52e08504d3afc4a9a8b0910af9c8",
+        "source": "bundled"
+      },
+      ".specify/scripts/node/gofer-closed-loop-audit.mjs": {
+        "sha256": "f304ab3890009b5bed0e5ed7b9310e8b79379484491489e8cbecc4764f999a74",
+        "source": "bundled"
+      },
+      ".specify/scripts/node/gofer-performance-report.mjs": {
+        "sha256": "ec1498083c4a697c5db53cac436c266ce9a684c95ecfcc3d54bca239e48d62b0",
+        "source": "bundled"
+      },
+      ".specify/scripts/node/gofer-workspace-bootstrap.mjs": {
+        "sha256": "d03c9683131b06436cbfa6af443e701ff59631a65ace6468825f3e4328cda42d",
+        "source": "bundled"
+      },
+      ".specify/scripts/node/gofer-workspace-check.mjs": {
+        "sha256": "0bebcfe7e53278bec310d7089716fb43c48c029dd0a32212c06d2e1c0f9fed58",
+        "source": "bundled"
+      },
+      ".specify/scripts/node/lib/ai-leverage-tagger.mjs": {
+        "sha256": "150e83a514d15e0f5e784df68f5925d63ceaa7d8545700d0e231aeb6ab4c205a",
+        "source": "bundled"
+      },
+      ".specify/scripts/node/lib/assemble-stakeholder-pack.mjs": {
+        "sha256": "27ea7924228f99135199474072696514733daf6531f4723792d5c56486826605",
+        "source": "bundled"
+      },
+      ".specify/scripts/node/lib/marp-deck.mjs": {
+        "sha256": "4801b5e16a388d2a7dc543098e49c9301bcdca8c5ec311b647ee1a2b6cf9848d",
+        "source": "bundled"
+      },
+      ".specify/scripts/node/lib/mermaid-tabular-fallback.mjs": {
+        "sha256": "eae9db315b1907cbcae35bf8b8c3961939cb6b89e626bb56e0aeba131d39beef",
+        "source": "bundled"
+      },
+      ".specify/scripts/node/lib/render-visual.mjs": {
+        "sha256": "58049b29b8cf70c22e9eecdea875d797b99a2fc998f429495572a048734694d3",
+        "source": "bundled"
+      },
+      ".specify/scripts/node/lib/validate-aliases.mjs": {
+        "sha256": "23c3246385a8ab4d316aa5e2446727010501dac0939a080cb87cac5c31dbd9ff",
+        "source": "bundled"
+      },
+      ".specify/scripts/node/lib/visual-counts.mjs": {
+        "sha256": "a0cff3b02edcc247b40f04d8ed953b5c53225b2eb6b8f3a5dffeda54bbb79f0b",
+        "source": "bundled"
+      },
+      ".specify/scripts/node/lib/visual-pass-pipeline.mjs": {
+        "sha256": "5d4ce6c6d7136b794ae65ddd67c0cc34b2df80b9b9f5aa4fbfe33cbbca01f37a",
+        "source": "bundled"
+      },
+      ".specify/scripts/node/mermaid-export.mjs": {
+        "sha256": "8392886861172b6d648139c6645586beed35369bbf7b19430109f3e3aeacea7e",
+        "source": "bundled"
+      },
+      ".specify/scripts/node/package-agent-plugin.mjs": {
+        "sha256": "57f86dc089ae869146aeed7f586ab51f989780c0ae6a5c406abde9a9dac86984",
+        "source": "bundled"
+      },
+      ".specify/scripts/node/parse-stage-command.mjs": {
+        "sha256": "ffe6dbc4778f91e9f012787df6897a170cf4deab2281b885c8aca60381485a37",
+        "source": "bundled"
+      },
+      ".specify/scripts/node/schemas/.gitkeep": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "source": "bundled"
+      },
+      ".specify/scripts/node/schemas/stage-command.schema.json": {
+        "sha256": "b11c6bca5e50428d7eeb8c5a7de55af36cac8a578d164a56014789984a013bd9",
+        "source": "bundled"
+      },
+      ".specify/scripts/node/sync-extension-resources.mjs": {
+        "sha256": "6224f63f24aaba37660f8822dbbc5a7f9b0657d283da41a324d22b827acdaed4",
+        "source": "bundled"
+      },
+      ".specify/scripts/node/workspace-bootstrap-lib.mjs": {
+        "sha256": "2c06511c1f6a5683316cd0150e6f8e95c9b39a95c5aecb2f1383609d1d6f2ba2",
+        "source": "bundled"
+      },
+      ".specify/scripts/powershell/install-optional-tools.ps1": {
+        "sha256": "7682dc1c40259430a74865024214380d3dd09b0e6b668033229ae39e0d04dbe6",
+        "source": "bundled"
+      },
+      ".specify/templates/agent-file-template.md": {
+        "sha256": "55ed438c2e861444ef22f45fe5238f3ebf0dc1cb6e53067d7232fbbf4ce82892",
+        "source": "bundled"
+      },
+      ".specify/templates/assumptions-template.md": {
+        "sha256": "fcb4851aef32cd5765f46afb12404eaa774be9e447e94229f4b7268af27996e9",
+        "source": "bundled"
+      },
+      ".specify/templates/audit-history-template.md": {
+        "sha256": "ee6391717b4a8005b94f6bba6360e02b707191af3fd84da76934a5b2e2ccb58e",
+        "source": "bundled"
+      },
+      ".specify/templates/brownfield-analysis.md": {
+        "sha256": "ae6d278b797b7338c65125bb89b03447bfdb1407dda5833bc079abafc32fb317",
+        "source": "bundled"
+      },
+      ".specify/templates/business-metrics-template.md": {
+        "sha256": "c9313b1782fde4da46538f12650f3ec1796a66624c751e861164b9d53118a2ea",
+        "source": "bundled"
+      },
+      ".specify/templates/checklist-template.md": {
+        "sha256": "d284dadead5219be442b3dd89fa014f0b5faeabe82c552fc19238714744ed52e",
+        "source": "bundled"
+      },
+      ".specify/templates/context-bundle-template.md": {
+        "sha256": "97878045b0c9fc23def31be7bb236106b1adbb932d3cf2b8dc79b5ca7ad5c50d",
+        "source": "bundled"
+      },
+      ".specify/templates/contract-pack-template.md": {
+        "sha256": "536640676a465aa79d2f873c5cf46c47cdca982692144a7ecb58013401fd17f9",
+        "source": "bundled"
+      },
+      ".specify/templates/discovery-template.md": {
+        "sha256": "ed8692017edc9e0694ce0422d6992aad96cc6874b80b8b4b0c60d64918149f53",
+        "source": "bundled"
+      },
+      ".specify/templates/eai-preflight-template.md": {
+        "sha256": "a40aa1cdda2bda0d24d523ccc6718569284182b6d4d8b38efdf8c09c534297aa",
+        "source": "bundled"
+      },
+      ".specify/templates/goal-ledger-template.json": {
+        "sha256": "3fdbd6d31f37f6058396e1dfc4a53b0b9d4044a66f44a33d1dee7a346f424ee5",
+        "source": "bundled"
+      },
+      ".specify/templates/gofer-model-policy.yaml": {
+        "sha256": "10bbaf7517e2a13ec4eb5c1998d4ac4a861000f1353bf6551b5ab400624dbac1",
+        "source": "bundled"
+      },
+      ".specify/templates/issues-template.md": {
+        "sha256": "a40f9b0d24ddba3db27de3970936e29d49623d044948c1bba99af80ad6e86a51",
+        "source": "bundled"
+      },
+      ".specify/templates/journey/base-journey.md": {
+        "sha256": "400350ff4d90cbb9ec05f4447cf3fa12972794059c51dc1cdc240c69b2718b47",
+        "source": "bundled"
+      },
+      ".specify/templates/journey/industry-variants.yaml": {
+        "sha256": "a243da2ab9790cfaf67a2dbb6cb8d238532898dfbe19cf51b106d4ae325f18d2",
+        "source": "bundled"
+      },
+      ".specify/templates/plan-template.md": {
+        "sha256": "36891e04faef015c9df6d11426feaeb003dff83929ee62f03521872d819b7407",
+        "source": "bundled"
+      },
+      ".specify/templates/problem-brief-template.md": {
+        "sha256": "8d1b3be923209164961b1833c63c57eb12e820ba021f31753a2e8b207edfa824",
+        "source": "bundled"
+      },
+      ".specify/templates/proposal-review-template.md": {
+        "sha256": "9b44d08e16bba6ef5252d864879e7f3c03db8e198b359b9c393a339149b37cfb",
+        "source": "bundled"
+      },
+      ".specify/templates/research-template.md": {
+        "sha256": "e32b8c74fed1077e6046c1f29ed47edcecac6ebdfb63a8a169dbe4723c40c6a2",
+        "source": "bundled"
+      },
+      ".specify/templates/reuse-scan-template.md": {
+        "sha256": "f24b53b7e8688aedc7a650931bb2252fa732bf33787c5fa4a2a6c1c183f2321c",
+        "source": "bundled"
+      },
+      ".specify/templates/sequence-diagrams/option-spectrum.yaml": {
+        "sha256": "7d622c48883ab6eade0049e91a29e6958194f7c2b98d7d6a80732c0baf1422e9",
+        "source": "bundled"
+      },
+      ".specify/templates/service-fit-matrix-template.md": {
+        "sha256": "46d89407bb626b75b4adf3a9d6b03019483de0cabd518ae91fe7a948d64eb12b",
+        "source": "bundled"
+      },
+      ".specify/templates/session-handoff-template.md": {
+        "sha256": "c78f2f64562cca6e28dcc5de864811d3a8a4d9a44b6d2130dbe3155884f40387",
+        "source": "bundled"
+      },
+      ".specify/templates/spec-summary-template.md": {
+        "sha256": "a0e06b9c9329f4fdca57ee152e48325fcede90a6da9657109ab1d604e8e1173b",
+        "source": "bundled"
+      },
+      ".specify/templates/spec-template.md": {
+        "sha256": "b357b6194dd3f13afe40ddea145c4f2b6a076f9e3878043e2dfc099adef2093e",
+        "source": "bundled"
+      },
+      ".specify/templates/stakeholder-comms-template.md": {
+        "sha256": "326f207435ad88825388037da06c91d5d2b54d9e5e552d298bc9f5e326e4f269",
+        "source": "bundled"
+      },
+      ".specify/templates/tasks-template.md": {
+        "sha256": "f5f5510fedd954616f05839ad10c075498bae8800cd0b4a1da20838ab482bfc4",
+        "source": "bundled"
+      },
+      ".specify/templates/ui-approval-template.md": {
+        "sha256": "a45cb481e72e4eadf66bd96401332e3f19373d0192809ea431b25ff0dfa93b9e",
+        "source": "bundled"
+      },
+      ".specify/templates/ui-preview-brief-template.md": {
+        "sha256": "1c2daf6dfd499aa2910e07b7c662dae9314fd475a87158f14e48c5210cd84cd4",
+        "source": "bundled"
+      },
+      ".specify/templates/ui-review-log-template.md": {
+        "sha256": "824dea7ba0564999fb23b126ef613a31c12e487635a055e013cadee04388682d",
+        "source": "bundled"
+      },
+      ".specify/templates/visuals/.gitkeep": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "source": "bundled"
+      },
+      ".specify/templates/visuals/bounded-context-map.md": {
+        "sha256": "a561c5f0e138d4660222d5d4d5613dc2b5feb0d5644dbe0c1351c96e1e7cfc38",
+        "source": "bundled"
+      },
+      ".specify/templates/visuals/bounded-context-template.md": {
+        "sha256": "6a08e791c1897692640f77146db062c4a0e47ba4385fc7edd01b160b5ef34374",
+        "source": "bundled"
+      },
+      ".specify/templates/visuals/c4-container-template.md": {
+        "sha256": "103b005c74d7cb180259e8ed1550af6303117ff844400b2d3cdf13d0aaf82329",
+        "source": "bundled"
+      },
+      ".specify/templates/visuals/c4-container.md": {
+        "sha256": "a095f493befd9e4b0a5f599c11e02cdd0166921aca10f5e312f0442bb2cba131",
+        "source": "bundled"
+      },
+      ".specify/templates/visuals/c4-context-template.md": {
+        "sha256": "f06722020e90bb11df45d17c1faec12382b0d573c057bc87135bfd7fcf54f006",
+        "source": "bundled"
+      },
+      ".specify/templates/visuals/capability-heatmap-template.md": {
+        "sha256": "bac5dcaf8cc26ee389ab356a6c2af015babc67f71001f60b906b7552371727b1",
+        "source": "bundled"
+      },
+      ".specify/templates/visuals/data-model-erd-template.md": {
+        "sha256": "ddc3b63d3e7a6ab4b2be60d48d7794b8b126b676581485b4ac734062957008e1",
+        "source": "bundled"
+      },
+      ".specify/templates/visuals/erd.md": {
+        "sha256": "26e136433942ca0610c226ec003e99dc5f8f614229c7c900e18a0b4668412bf1",
+        "source": "bundled"
+      },
+      ".specify/templates/visuals/impact-canvas.md": {
+        "sha256": "cdfa50d4ef49924a7b2c0339e10400ef40c1ade0854dfaef7504278fbea48193",
+        "source": "bundled"
+      },
+      ".specify/templates/visuals/risk-heatmap-template.md": {
+        "sha256": "1c17064f73bc525ac8d86215ff5d9181a71c4a7f252d753048176343be2f7073",
+        "source": "bundled"
+      },
+      ".specify/templates/visuals/roi-projection.md": {
+        "sha256": "e832edca3009c73514515bda44f8da8fed3cbe5ccb3a6c37de1fc3cca2b2ee44",
+        "source": "bundled"
+      },
+      ".specify/templates/visuals/value-stream-asis.md": {
+        "sha256": "dc7a11f9139e4283cb4d24f2d999498e99d7cbd164478c0ae5aae4add186628b",
+        "source": "bundled"
+      },
+      ".specify/templates/visuals/value-stream-tobe.md": {
+        "sha256": "852f6570798758d9a2faf24189b0de6c0b509929bbfd0cf8c0e4103dccf3c01d",
+        "source": "bundled"
+      },
+      ".system/skills/0_business_scenario/SKILL.md": {
+        "sha256": "806b2bc508d116723c8dffb359089f1884160e09e46d4ef75ee061f9ac012815",
+        "source": "bundled"
+      },
+      ".system/skills/0a_problem_validation/SKILL.md": {
+        "sha256": "f51f64557454af26051a19a9becf9c13cbd6dd7d1a0ad5fafc90ad6b04513c12",
+        "source": "bundled"
+      },
+      ".system/skills/1_gofer_research/SKILL.md": {
+        "sha256": "66810780ffd1c763a9f01abdc052a833c098809cd0b619455a74126ebcd81ca4",
+        "source": "bundled"
+      },
+      ".system/skills/10_gofer_cloud/SKILL.md": {
+        "sha256": "4d58200e250b67b65bc1c7c71d3ee2b191c6d3c48a5a9c82b4aee415f9d6ac7e",
+        "source": "bundled"
+      },
+      ".system/skills/2_gofer_specify/SKILL.md": {
+        "sha256": "8b313f920b740ebe408d48ca002d048a0713f0ca05169a55f25590c8c56ad285",
+        "source": "bundled"
+      },
+      ".system/skills/3_gofer_plan/SKILL.md": {
+        "sha256": "e06a48442157e60b495b6999b400ab29fa93449d3a3c552bd6679d194fe5cac9",
+        "source": "bundled"
+      },
+      ".system/skills/4_gofer_tasks/SKILL.md": {
+        "sha256": "3112067b24cbbffc64a20e0cc85755bafa2e85ef29a86328bbff3a4a28f23519",
+        "source": "bundled"
+      },
+      ".system/skills/5_gofer_implement/SKILL.md": {
+        "sha256": "c24ee0be3e3253c907c4624c2e991252cf8cdc4454cdb5e34cc5346149c8b3ad",
+        "source": "bundled"
+      },
+      ".system/skills/6_gofer_validate/SKILL.md": {
+        "sha256": "c3094e40bed660ab0be32e9b7558f11144d3a5dedc7deb1e00f54ec6af266744",
+        "source": "bundled"
+      },
+      ".system/skills/7_gofer_save/SKILL.md": {
+        "sha256": "7f4807372d6371d148075f4842a6f1b22c191528ccac89ea839a4a6aa732a164",
+        "source": "bundled"
+      },
+      ".system/skills/7a_stakeholder_comms/SKILL.md": {
+        "sha256": "e87262ccf25e09e8710f406f385a8c7682412abf10ff16da347e18ec63fe95b3",
+        "source": "bundled"
+      },
+      ".system/skills/8_gofer_resume/SKILL.md": {
+        "sha256": "eb8b9f024c193d9219358737c40b8aa483ddba72cd724e7959c40e74e50b430f",
+        "source": "bundled"
+      },
+      ".system/skills/9_gofer_tests/SKILL.md": {
+        "sha256": "4d346083d88fcdca8990b3a1ee6ea1c72b452bce459bf7ae56d61924efb1a82b",
+        "source": "bundled"
+      },
+      ".system/skills/gofer_bootstrap_workspace/SKILL.md": {
+        "sha256": "b8928a501d2ff1358562880cf45ce83a0d1f4c2c9c252a3bf65d731e736a1427",
+        "source": "bundled"
+      },
+      ".system/skills/gofer_check_workspace/SKILL.md": {
+        "sha256": "51f16c68a78ac6ca695b17c3e12fbceb8b75ec1f304a64752f8d9053f464c596",
+        "source": "bundled"
+      },
+      ".system/skills/gofer_constitution/SKILL.md": {
+        "sha256": "e66fb9828cae7e609af079420589a9cbe390bf0796ea9a0bf6e5321a7acde891",
+        "source": "bundled"
+      },
+      ".system/skills/gofer_diagnose/SKILL.md": {
+        "sha256": "1c9bdbec239b062a7eb3bdc301f46291303087dbda43184ea422d5d4e8a69e1b",
+        "source": "bundled"
+      },
+      ".system/skills/gofer_eai_first_run/SKILL.md": {
+        "sha256": "34ecfc460d108e8f7f6e13f3c38beda915d0a0b1cb5b32d23c95d4312416b25b",
+        "source": "bundled"
+      },
+      ".system/skills/gofer_hydrate/SKILL.md": {
+        "sha256": "0af4f8fa85c70337e2eddf67dfa5a766a17504522e28994e344a5e14538b2082",
+        "source": "bundled"
+      },
+      ".system/skills/gofer_personality/SKILL.md": {
+        "sha256": "58734941981e574778e4bc3555646e22f0967c38a7dc26cc8535a827c473eafb",
+        "source": "bundled"
+      },
+      ".system/skills/gofer_plan/SKILL.md": {
+        "sha256": "d84c68fbb32db515c5fded649bc3411b9e115c00657518a28ef485769b71c5fc",
+        "source": "bundled"
+      },
+      ".system/skills/gofer_side/SKILL.md": {
+        "sha256": "9b3df579c5086642ce341ee904af8eba17314e13d25a77d256362664803c09e0",
+        "source": "bundled"
+      },
+      ".system/skills/gofer_spec_summary/SKILL.md": {
+        "sha256": "e332980b1dc4d7b34f0a764817017a1126f0a551123f7115a48ac890376d9892",
+        "source": "bundled"
+      },
+      ".system/skills/gofer_tdd/SKILL.md": {
+        "sha256": "d52d1e845e11033d5f731597c01741d3d32fb106105ad325c31377730bbe9e51",
+        "source": "bundled"
+      },
+      ".system/skills/gofer_vocabulary/SKILL.md": {
+        "sha256": "9d435cac77046e76942b896fbd7bb1f0a132674d65e1b77d800ec589035b2021",
+        "source": "bundled"
+      },
+      ".system/skills/gofer_zoom_out/SKILL.md": {
+        "sha256": "c7d1d8d6954083b536813c177314811f1d941f48efe9fd08696e5184d64d2a28",
+        "source": "bundled"
+      }
+    },
+    "refreshedAt": "2026-06-16T13:38:02.758Z"
+  }
+}
