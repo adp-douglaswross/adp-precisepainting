@@ -1,0 +1,41 @@
+# Context Bundle — painting-operations-platform
+
+## Scenario Summary
+
+Precise Painting needs one EAI-integrated application for 50 painters and HQ operations, covering quote/variation capture, map/location visibility, paint/material planning against purchased stock, messaging, reassignment, timesheets, payroll readiness, and centralized invoicing.
+
+## Confirmed Scope Signals
+
+- App delivery (not non-app analysis)
+- Two role-specific UI routes:
+  - Painter mobile route: `/mobile`
+  - HQ desktop/iPad route: `/hq`
+- Authentication: Microsoft Entra for all users
+- Messaging: required between HQ and painters
+- AI: embedded in every step with assistive recommendations, validation, and human override/audit controls
+- Process constraints:
+  - Painter workflow: 4 steps or fewer
+  - HQ workflow: 4 steps or fewer
+
+## Discovery Decisions
+
+- Feature name: `painting-operations-platform`
+- Problem focus: unified field-to-HQ operating system
+- Primary users: painters + HQ team members
+- Primary value: time savings (with quality/cost/velocity metrics also included)
+- Competitive research: requested (global best-practice analysis required)
+
+## EAI Preflight Summary
+
+- Gofer workspace scaffold bootstrapped and present
+- EAI CLI present (`3.2.6`) and current
+- Login/tenant ready (`precisepainting`, tenant-admin)
+- EAI project markers present and `eai verify` passed
+- Some advanced CLI capability commands are not advertised in this version and will be treated as gated
+
+## Routing Decision
+
+- Pipeline route: `/1_gofer_research`
+- Auto-chain target: research → specify → plan → tasks → implement → validate
+- Research priority: global comparator scan + EAI-first architecture and UI/UX-first outputs
+
