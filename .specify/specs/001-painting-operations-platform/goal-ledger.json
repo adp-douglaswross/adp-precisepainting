@@ -1,32 +1,59 @@
 {
-  "feature": "001-painting-operations-platform",
+  "featureId": "001-painting-operations-platform",
+  "generatedAt": "2026-06-16T21:50:30Z",
   "goals": [
     {
       "id": "G1",
-      "outcome": "Reduce quote-to-approved-job cycle time",
-      "metric": "Median quote_to_approval_minutes",
+      "outcome": "Reduce quote-to-approved-job cycle",
+      "metric": "quote_to_approval_minutes",
       "target": "-40%",
       "owner": "HQ Operations",
       "confidence": 0.85,
-      "deliveryState": "hybrid"
+      "linkedStories": ["US1", "US2"],
+      "linkedRequirements": ["FR-001", "FR-002", "FR-003", "SC-001", "SC-003"],
+      "trace": {
+        "requirements": ["FR-001", "FR-002", "FR-003", "SC-001", "SC-003"]
+      }
     },
     {
       "id": "G2",
       "outcome": "Improve workforce control quality",
-      "metric": "Timesheet/payroll correction ratio",
+      "metric": "timesheet_payroll_correction_ratio",
       "target": "-60%",
       "owner": "Payroll Lead",
       "confidence": 0.8,
-      "deliveryState": "hybrid"
+      "linkedStories": ["US2"],
+      "linkedRequirements": ["FR-004", "FR-005", "SC-002", "SC-004"],
+      "trace": {
+        "requirements": ["FR-004", "FR-005", "SC-002", "SC-004"]
+      }
     },
     {
       "id": "G3",
-      "outcome": "Accelerate invoicing closeout",
-      "metric": "Same-day invoice issuance",
+      "outcome": "Accelerate billing closeout",
+      "metric": "same_day_invoice_rate",
       "target": ">=80%",
       "owner": "Finance Ops",
       "confidence": 0.82,
-      "deliveryState": "hybrid"
+      "linkedStories": ["US3"],
+      "linkedRequirements": ["FR-006", "FR-007", "SC-005"],
+      "trace": {
+        "requirements": ["FR-006", "FR-007", "SC-005"]
+      }
+    }
+  ],
+  "deliveryStates": [
+    {
+      "capability": "ai_step_assistance",
+      "currentState": "hybrid",
+      "targetState": "live",
+      "promotionCriteria": ["real EAI-backed recommendations per step"]
+    },
+    {
+      "capability": "realtime_painter_status",
+      "currentState": "hybrid",
+      "targetState": "live",
+      "promotionCriteria": ["live telemetry source wired to status board"]
     }
   ],
   "reloopTriggers": [

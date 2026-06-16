@@ -63,8 +63,7 @@ const postgresqlResourceStorage = {
   },
 };
 
-export const objectTypes = {
-  'precise-painting': [
+const precisePaintingObjectTypes = [
     {
       name: 'Record',
       displayName: 'Record',
@@ -173,7 +172,11 @@ export const objectTypes = {
       status: 'published' as const,
     },
 
-  ],
+];
+
+export const objectTypes = {
+  template: precisePaintingObjectTypes,
+  'precise-painting': precisePaintingObjectTypes,
 
   // ── Dual-tenant example (uncomment if using dual tenant structure) ──
   // 'precise-painting-customer': [ ... ],

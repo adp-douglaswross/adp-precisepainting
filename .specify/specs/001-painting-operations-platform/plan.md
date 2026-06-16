@@ -1,5 +1,7 @@
 # Implementation Plan: Painting Operations Platform
 
+_Updated: 2026-06-16T21:53:40Z_
+
 ## Architecture Summary
 
 - Frontend: Next.js App Router routes (`/`, `/mobile`, `/hq`).

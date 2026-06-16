@@ -1,5 +1,7 @@
 # Tasks: Painting Operations Platform
 
+_Updated: 2026-06-16T21:54:50Z_
+
 ## Phase 1: Route Foundations
 
 - [x] T001 Update home route with links to `/mobile` and `/hq`
