@@ -4,7 +4,7 @@ description: Gofer Research
 gofer:
   workflowProfile: standard
   canonicalSource: .specify/commands/1_gofer_research.md
-  canonicalChecksum: ed007b3edec093c9bc2c1944a1ac48e81826847b1ac7a46b54ded355918b646f
+  canonicalChecksum: 87d0cb0b742257592c056e486a4cc83c752cf8496287fd0763c71071b093762a
   metadataSource: extension/src/services/migration/ResourceSyncer.ts
 arguments:
   - name: feature
@@ -470,6 +470,13 @@ explicitly `enterpriseai`, generate:
    - Record the selected package profile and block-catalog readiness evidence
      from `eai blocks list`, `eai blocks readiness`, and selected
      `eai blocks describe <id>` calls.
+   - Record resource provisioning state, object-type publish state,
+     schema/storage health state, workflow readiness, last completed gate,
+     blocked gate, and next recovery command so later stages inherit the real
+     platform lifecycle instead of guessing.
+   - Use `.specify/references/platform/eai-repo-contract.md` and
+     `.specify/references/platform/eai-error-catalog.yaml` whenever recovery,
+     command ordering, or drift handling is unclear.
    - Record only product-safe status labels such as `ready`,
      `account_required`, `login_required`, `tenant_required`,
      `operator_required`, `template_required`, `user_confirmation_required`,
