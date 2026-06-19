@@ -51,6 +51,12 @@ Benchmarked operating patterns used by leading field-service products (e.g., Ser
 4. AI used as assistive copilot (prefill, validation, next-best action), not silent automation.
 5. Closeout package generation from completed field evidence and approved variations.
 
+### 2026-06-18 competitor UI notes (requested refresh pass)
+
+- **Jobber scheduling** highlights rapid job assignment, interactive map routing, and minimal-click crew scheduling.
+- **Tradify features** highlight job dashboards with interactive maps and quick photo/video attachment to job records.
+- **Implication for Precise Painting UI**: keep map and evidence capture visible at the point of action, and prefill known fields (address/contact/type/material context) so users mostly review instead of entering data from scratch.
+
 ## Codebase Analysis
 
 ### Where to Implement

@@ -27,3 +27,12 @@ _Updated: 2026-06-16T21:54:50Z_
 - [x] T012 Add `/hq` interaction test
 - [x] T013 Run lint/typecheck/tests/build and record results
 - [ ] T014 Run `/6_gofer_validate` and capture rubric score
+## Validation iteration tasks (2026-06-18)
+
+- [x] Make `/mobile` step panels materially distinct by step and mobile-first.
+- [x] Add visible map and per-step required photo checklist for painter execution.
+- [x] Add job separation and job drill-in on `/mobile`.
+- [x] Add iPad-friendly top process flow and scrolling behavior on `/hq`.
+- [x] Make `/hq` step panels materially distinct by step and align to business scenario groups.
+- [x] Add HQ job drill-in with selected-job context and dispatch-step job selection.
+- [x] Update UI tests to verify step changes, job drill-in, and photo-guidance surfaces.

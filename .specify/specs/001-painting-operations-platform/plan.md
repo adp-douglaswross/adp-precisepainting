@@ -35,3 +35,12 @@ _Updated: 2026-06-16T21:53:40Z_
 - Run lint, typecheck, tests, build.
 - Route response checks for `/`, `/mobile`, `/hq`.
 - Produce screenshots under `visuals/` when host supports browser dependencies.
+## 2026-06-18 Validation-driven UX refinement addendum
+
+This plan iteration adds scenario-level UX coverage requested during `/6_gofer_validate`:
+
+1. Mobile route now includes explicit job separation, job drill-in context, and per-step required photo checklists.
+2. HQ route now includes explicit job drill-in with selected-job context and step-specific workflow surfaces aligned to `hq-business-scenarios.md`.
+3. Validation evidence expanded with route interaction tests for job drill-in and scenario-aligned step behavior.
+
+These updates preserve the existing 4-step structure for painter and HQ workflows while improving task discoverability and reducing missing-input ambiguity.
